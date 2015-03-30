@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */; };
+		D1A882A91AC960C3009C435D /* MLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882A81AC960C3009C435D /* MLoginViewController.m */; };
+		D1A882AC1AC963FE009C435D /* MRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882AB1AC963FE009C435D /* MRegisterViewController.m */; };
+		D1A882AF1AC98AB6009C435D /* MHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882AE1AC98AB6009C435D /* MHomeViewController.m */; };
+		D1A882B21AC993D5009C435D /* MGameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882B11AC993D5009C435D /* MGameScreenViewController.m */; };
+		D1A882B51AC9B4E0009C435D /* MProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882B41AC9B4E0009C435D /* MProfileViewController.m */; };
+		D1A882B81AC9B6CC009C435D /* MLeaderBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882B71AC9B6CC009C435D /* MLeaderBoardViewController.m */; };
 		D1AAF88D1AC719CD00E42A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AAF88C1AC719CD00E42A2D /* Foundation.framework */; };
 		D1AAF88F1AC719CD00E42A2D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AAF88E1AC719CD00E42A2D /* CoreGraphics.framework */; };
 		D1AAF8911AC719CD00E42A2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AAF8901AC719CD00E42A2D /* UIKit.framework */; };
@@ -34,6 +41,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D1A4E43C1AC871C50016389F /* MSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSplashScreenViewController.h; sourceTree = "<group>"; };
+		D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSplashScreenViewController.m; sourceTree = "<group>"; };
+		D1A882A71AC960C3009C435D /* MLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLoginViewController.h; sourceTree = "<group>"; };
+		D1A882A81AC960C3009C435D /* MLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLoginViewController.m; sourceTree = "<group>"; };
+		D1A882AA1AC963FE009C435D /* MRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRegisterViewController.h; sourceTree = "<group>"; };
+		D1A882AB1AC963FE009C435D /* MRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRegisterViewController.m; sourceTree = "<group>"; };
+		D1A882AD1AC98AB6009C435D /* MHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHomeViewController.h; sourceTree = "<group>"; };
+		D1A882AE1AC98AB6009C435D /* MHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHomeViewController.m; sourceTree = "<group>"; };
+		D1A882B01AC993D5009C435D /* MGameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGameScreenViewController.h; sourceTree = "<group>"; };
+		D1A882B11AC993D5009C435D /* MGameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGameScreenViewController.m; sourceTree = "<group>"; };
+		D1A882B31AC9B4E0009C435D /* MProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MProfileViewController.h; sourceTree = "<group>"; };
+		D1A882B41AC9B4E0009C435D /* MProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MProfileViewController.m; sourceTree = "<group>"; };
+		D1A882B61AC9B6CC009C435D /* MLeaderBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeaderBoardViewController.h; sourceTree = "<group>"; };
+		D1A882B71AC9B6CC009C435D /* MLeaderBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLeaderBoardViewController.m; sourceTree = "<group>"; };
 		D1AAF8891AC719CD00E42A2D /* IOS-Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1AAF88C1AC719CD00E42A2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D1AAF88E1AC719CD00E42A2D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +100,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1A4E43B1AC871740016389F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1A4E43C1AC871C50016389F /* MSplashScreenViewController.h */,
+				D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */,
+				D1A882A71AC960C3009C435D /* MLoginViewController.h */,
+				D1A882A81AC960C3009C435D /* MLoginViewController.m */,
+				D1A882AA1AC963FE009C435D /* MRegisterViewController.h */,
+				D1A882AB1AC963FE009C435D /* MRegisterViewController.m */,
+				D1A882AD1AC98AB6009C435D /* MHomeViewController.h */,
+				D1A882AE1AC98AB6009C435D /* MHomeViewController.m */,
+				D1A882B01AC993D5009C435D /* MGameScreenViewController.h */,
+				D1A882B11AC993D5009C435D /* MGameScreenViewController.m */,
+				D1A882B31AC9B4E0009C435D /* MProfileViewController.h */,
+				D1A882B41AC9B4E0009C435D /* MProfileViewController.m */,
+				D1A882B61AC9B6CC009C435D /* MLeaderBoardViewController.h */,
+				D1A882B71AC9B6CC009C435D /* MLeaderBoardViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		D1AAF8801AC719CD00E42A2D = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +154,7 @@
 		D1AAF8921AC719CD00E42A2D /* IOS-Game */ = {
 			isa = PBXGroup;
 			children = (
+				D1A4E43B1AC871740016389F /* ViewControllers */,
 				D1AAF89B1AC719CD00E42A2D /* MAppDelegate.h */,
 				D1AAF89C1AC719CD00E42A2D /* MAppDelegate.m */,
 				D1AAF89E1AC719CD00E42A2D /* Main.storyboard */,
@@ -251,8 +294,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1AAF89D1AC719CD00E42A2D /* MAppDelegate.m in Sources */,
+				D1A882B51AC9B4E0009C435D /* MProfileViewController.m in Sources */,
+				D1A882AF1AC98AB6009C435D /* MHomeViewController.m in Sources */,
 				D1AAF8991AC719CD00E42A2D /* main.m in Sources */,
 				D1AAF8A31AC719CD00E42A2D /* MViewController.m in Sources */,
+				D1A882B21AC993D5009C435D /* MGameScreenViewController.m in Sources */,
+				D1A882B81AC9B6CC009C435D /* MLeaderBoardViewController.m in Sources */,
+				D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */,
+				D1A882A91AC960C3009C435D /* MLoginViewController.m in Sources */,
+				D1A882AC1AC963FE009C435D /* MRegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +511,7 @@
 				D1AAF8BD1AC719CE00E42A2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1AAF8BE1AC719CE00E42A2D /* Build configuration list for PBXNativeTarget "IOS-GameTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +520,7 @@
 				D1AAF8C01AC719CE00E42A2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

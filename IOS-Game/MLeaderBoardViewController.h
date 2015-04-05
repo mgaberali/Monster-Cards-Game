@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Reachability;
 
 @interface MLeaderBoardViewController : UITableViewController
+{
+    Reachability* internetReachable;
+    Reachability* hostReachable;
+}
 
+@property bool internetActive;
+@property bool hostActive;
+@property (nonatomic, strong) NSMutableArray *winnersArray;
+
+-(void) checkNetworkStatus:(NSNotification *)notice;
 @end

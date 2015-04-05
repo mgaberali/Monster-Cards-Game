@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D19250091ACB5D7000392035 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19250081ACB5D7000392035 /* GameScreenViewController.m */; };
+		D192500B1ACB626E00392035 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = D192500A1ACB626E00392035 /* img1.png */; };
+		D192500D1ACB627D00392035 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D192500C1ACB627D00392035 /* img2.png */; };
 		D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */; };
 		D1A882A91AC960C3009C435D /* MLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882A81AC960C3009C435D /* MLoginViewController.m */; };
 		D1A882AC1AC963FE009C435D /* MRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882AB1AC963FE009C435D /* MRegisterViewController.m */; };
@@ -41,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D19250071ACB5D7000392035 /* GameScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScreenViewController.h; sourceTree = "<group>"; };
+		D19250081ACB5D7000392035 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
+		D192500A1ACB626E00392035 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img1.png; path = ../img1.png; sourceTree = "<group>"; };
+		D192500C1ACB627D00392035 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img2.png; path = ../img2.png; sourceTree = "<group>"; };
 		D1A4E43C1AC871C50016389F /* MSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSplashScreenViewController.h; sourceTree = "<group>"; };
 		D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSplashScreenViewController.m; sourceTree = "<group>"; };
 		D1A882A71AC960C3009C435D /* MLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLoginViewController.h; sourceTree = "<group>"; };
@@ -117,6 +124,8 @@
 				D1A882B41AC9B4E0009C435D /* MProfileViewController.m */,
 				D1A882B61AC9B6CC009C435D /* MLeaderBoardViewController.h */,
 				D1A882B71AC9B6CC009C435D /* MLeaderBoardViewController.m */,
+				D19250071ACB5D7000392035 /* GameScreenViewController.h */,
+				D19250081ACB5D7000392035 /* GameScreenViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -124,6 +133,8 @@
 		D1AAF8801AC719CD00E42A2D = {
 			isa = PBXGroup;
 			children = (
+				D192500C1ACB627D00392035 /* img2.png */,
+				D192500A1ACB626E00392035 /* img1.png */,
 				D1AAF8921AC719CD00E42A2D /* IOS-Game */,
 				D1AAF8B11AC719CE00E42A2D /* IOS-GameTests */,
 				D1AAF88B1AC719CD00E42A2D /* Frameworks */,
@@ -273,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1AAF8A51AC719CD00E42A2D /* Images.xcassets in Resources */,
+				D192500D1ACB627D00392035 /* img2.png in Resources */,
+				D192500B1ACB626E00392035 /* img1.png in Resources */,
 				D1AAF8971AC719CD00E42A2D /* InfoPlist.strings in Resources */,
 				D1AAF8A01AC719CD00E42A2D /* Main.storyboard in Resources */,
 			);
@@ -298,6 +311,7 @@
 				D1A882AF1AC98AB6009C435D /* MHomeViewController.m in Sources */,
 				D1AAF8991AC719CD00E42A2D /* main.m in Sources */,
 				D1AAF8A31AC719CD00E42A2D /* MViewController.m in Sources */,
+				D19250091ACB5D7000392035 /* GameScreenViewController.m in Sources */,
 				D1A882B21AC993D5009C435D /* MGameScreenViewController.m in Sources */,
 				D1A882B81AC9B6CC009C435D /* MLeaderBoardViewController.m in Sources */,
 				D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */,

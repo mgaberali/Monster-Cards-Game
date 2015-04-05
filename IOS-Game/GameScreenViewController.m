@@ -73,6 +73,7 @@
 }
 
 -(IBAction)pressImg:(id)sender{
+    [self playSound];
     printf("kmlmlkmklm");
     UIImage * img=[UIImage imageNamed:@"img2.png"];
 
@@ -95,7 +96,6 @@
         
         
     } ];
-
    
 }
 
@@ -111,6 +111,41 @@
     [animationView setAnimationImages:animations];
     [animationView setAnimationDuration:animationDuration];
     [animationView setAnimationRepeatCount:0]; //0 is infinite
+}
+
+-(void) playSound{
+    int randomSoundNumber = arc4random() % 4; //random number from 0 to 3
+    
+    NSLog(@"random sound number = %i", randomSoundNumber);
+    
+    NSString *effectTitle;
+    
+    switch (randomSoundNumber) {
+        case 0:
+            effectTitle = @"sound1";
+            break;
+        case 1:
+            effectTitle = @"sound2";
+            break;
+        case 2:
+            effectTitle = @"sound3";
+            break;
+        case 3:
+            effectTitle = @"sound4";
+            break;
+            
+        default:
+            break;
+    }
+    
+    SystemSoundID soundID;
+    
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:effectTitle ofType:@"wav"];
+    NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
+    
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)soundUrl, &soundID);
+    AudioServicesPlaySystemSound(soundID);
+
 }
 
 @end

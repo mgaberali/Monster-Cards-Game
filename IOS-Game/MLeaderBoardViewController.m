@@ -15,10 +15,15 @@
 @end
 
 @implementation MLeaderBoardViewController
-Reachability *internetReachableFoo;
-bool hostActive;
+
+//plist
 NSString *fullPath;
 NSString *filePath;
+
+//connection
+Reachability *internetReachableFoo;
+bool hostActive;
+
 
 //NSArray *winnersArray;
 
@@ -51,6 +56,8 @@ NSString *filePath;
     [super viewDidLoad];
 
     [self setTitle:@"Leader Board"];
+
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -58,7 +65,7 @@ NSString *filePath;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //initiating plist file path
-    filePath = @"/Users/participant/Desktop/IOSProjectGIT/IOS-Game-App/IOS-Game";
+    filePath = @"/Users/participant/Desktop/IOS-GAME-GIT/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
 
     [self addWinnersToPlist];
@@ -245,6 +252,8 @@ NSString *filePath;
         cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"highlightedBG.png"]];
     }
 }
+
+
 
 /*
 // Override to support conditional editing of the table view.

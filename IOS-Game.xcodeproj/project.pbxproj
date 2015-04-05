@@ -10,6 +10,11 @@
 		D19250091ACB5D7000392035 /* GameScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19250081ACB5D7000392035 /* GameScreenViewController.m */; };
 		D192500B1ACB626E00392035 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = D192500A1ACB626E00392035 /* img1.png */; };
 		D192500D1ACB627D00392035 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D192500C1ACB627D00392035 /* img2.png */; };
+		D1961A051AD1DDC1007D2FDB /* sound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1961A011AD1DDC1007D2FDB /* sound1.wav */; };
+		D1961A061AD1DDC1007D2FDB /* sound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1961A021AD1DDC1007D2FDB /* sound2.wav */; };
+		D1961A071AD1DDC1007D2FDB /* sound3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1961A031AD1DDC1007D2FDB /* sound3.wav */; };
+		D1961A081AD1DDC1007D2FDB /* sound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1961A041AD1DDC1007D2FDB /* sound4.wav */; };
+		D1961A0B1AD1E03A007D2FDB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1961A0A1AD1E03A007D2FDB /* AudioToolbox.framework */; };
 		D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */; };
 		D1A882A91AC960C3009C435D /* MLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882A81AC960C3009C435D /* MLoginViewController.m */; };
 		D1A882AC1AC963FE009C435D /* MRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882AB1AC963FE009C435D /* MRegisterViewController.m */; };
@@ -58,6 +63,11 @@
 		D19250081ACB5D7000392035 /* GameScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScreenViewController.m; sourceTree = "<group>"; };
 		D192500A1ACB626E00392035 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img1.png; path = ../img1.png; sourceTree = "<group>"; };
 		D192500C1ACB627D00392035 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img2.png; path = ../img2.png; sourceTree = "<group>"; };
+		D1961A011AD1DDC1007D2FDB /* sound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound1.wav; sourceTree = "<group>"; };
+		D1961A021AD1DDC1007D2FDB /* sound2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound2.wav; sourceTree = "<group>"; };
+		D1961A031AD1DDC1007D2FDB /* sound3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound3.wav; sourceTree = "<group>"; };
+		D1961A041AD1DDC1007D2FDB /* sound4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound4.wav; sourceTree = "<group>"; };
+		D1961A0A1AD1E03A007D2FDB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D1A4E43C1AC871C50016389F /* MSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSplashScreenViewController.h; sourceTree = "<group>"; };
 		D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSplashScreenViewController.m; sourceTree = "<group>"; };
 		D1A882A71AC960C3009C435D /* MLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLoginViewController.h; sourceTree = "<group>"; };
@@ -110,8 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D195B4AE1ACEE24400A68E85 /* Accounts.framework in Frameworks */,
-				D195B4AC1ACEE23D00A68E85 /* Social.framework in Frameworks */,
+				D1961A0B1AD1E03A007D2FDB /* AudioToolbox.framework in Frameworks */,
 				D1AAF88F1AC719CD00E42A2D /* CoreGraphics.framework in Frameworks */,
 				D1AAF8911AC719CD00E42A2D /* UIKit.framework in Frameworks */,
 				D1AAF88D1AC719CD00E42A2D /* Foundation.framework in Frameworks */,
@@ -139,10 +148,19 @@
 				D1F5F93F1AD142B600455DFF /* HWinner.h */,
 				D1F5F9401AD142B600455DFF /* HWinner.m */,
 				D1F5F9421AD142B600455DFF /* WinnersPList.plist */,
-				D195B4A81ACEE21400A68E85 /* MSocialShareUtility.h */,
-				D195B4A91ACEE21400A68E85 /* MSocialShareUtility.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D1961A091AD1DDCB007D2FDB /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D1961A011AD1DDC1007D2FDB /* sound1.wav */,
+				D1961A021AD1DDC1007D2FDB /* sound2.wav */,
+				D1961A031AD1DDC1007D2FDB /* sound3.wav */,
+				D1961A041AD1DDC1007D2FDB /* sound4.wav */,
+			);
+			name = sounds;
 			sourceTree = "<group>";
 		};
 		D1A4E43B1AC871740016389F /* ViewControllers */ = {
@@ -192,8 +210,7 @@
 		D1AAF88B1AC719CD00E42A2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D195B4AD1ACEE24400A68E85 /* Accounts.framework */,
-				D195B4AB1ACEE23D00A68E85 /* Social.framework */,
+				D1961A0A1AD1E03A007D2FDB /* AudioToolbox.framework */,
 				D1AAF88C1AC719CD00E42A2D /* Foundation.framework */,
 				D1AAF88E1AC719CD00E42A2D /* CoreGraphics.framework */,
 				D1AAF8901AC719CD00E42A2D /* UIKit.framework */,
@@ -205,6 +222,7 @@
 		D1AAF8921AC719CD00E42A2D /* IOS-Game */ = {
 			isa = PBXGroup;
 			children = (
+				D1961A091AD1DDCB007D2FDB /* sounds */,
 				D1F5F94D1AD142BB00455DFF /* images */,
 				D195B4A71ACEE1CF00A68E85 /* Utilities */,
 				D1A4E43B1AC871740016389F /* ViewControllers */,
@@ -339,10 +357,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1961A061AD1DDC1007D2FDB /* sound2.wav in Resources */,
 				D1F5F9451AD142B600455DFF /* big.jpg in Resources */,
+				D1961A071AD1DDC1007D2FDB /* sound3.wav in Resources */,
 				D1F5F9441AD142B600455DFF /* bg.png in Resources */,
 				D1F5F94C1AD142B600455DFF /* WinnersPList.plist in Resources */,
 				D1F5F9461AD142B600455DFF /* default.jpg in Resources */,
+				D1961A081AD1DDC1007D2FDB /* sound4.wav in Resources */,
 				D1AAF8A51AC719CD00E42A2D /* Images.xcassets in Resources */,
 				D192500D1ACB627D00392035 /* img2.png in Resources */,
 				D192500B1ACB626E00392035 /* img1.png in Resources */,
@@ -351,6 +372,7 @@
 				D1F5F9481AD142B600455DFF /* highlightedBG.png in Resources */,
 				D1F5F9471AD142B600455DFF /* hala.jpg in Resources */,
 				D1AAF8A01AC719CD00E42A2D /* Main.storyboard in Resources */,
+				D1961A051AD1DDC1007D2FDB /* sound1.wav in Resources */,
 				D1F5F9431AD142B600455DFF /* ahmed.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +393,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1AAF89D1AC719CD00E42A2D /* MAppDelegate.m in Sources */,
-				D195B4AA1ACEE21400A68E85 /* MSocialShareUtility.m in Sources */,
 				D1A882B51AC9B4E0009C435D /* MProfileViewController.m in Sources */,
 				D1A882AF1AC98AB6009C435D /* MHomeViewController.m in Sources */,
 				D1AAF8991AC719CD00E42A2D /* main.m in Sources */,

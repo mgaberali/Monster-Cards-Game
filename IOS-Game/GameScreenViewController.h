@@ -9,8 +9,38 @@
 #import <UIKit/UIKit.h>
 
 @interface GameScreenViewController : UIViewController
-@property IBOutlet UIImageView * card;
+
 @property IBOutlet UIButton * btn;
+@property IBOutlet UIButton * btn2;
+@property IBOutlet UIButton * btn3;
+@property IBOutlet UIButton * btn4;
+@property IBOutlet UIButton * btn5;
+@property IBOutlet UIButton * btn6;
+@property IBOutlet UIButton * btn7;
+@property IBOutlet UIButton * btn8;
+@property IBOutlet UIButton * btn9;
+@property IBOutlet UIButton * btn10;
+@property IBOutlet UIButton * btn11;
+@property IBOutlet UIButton * btn12;
+@property IBOutlet UIButton * btn13;
+@property IBOutlet UIButton * btn14;
+@property IBOutlet UIButton * btn15;
+@property IBOutlet UIButton * btn16;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -(IBAction)pressImg:(id)sender;
 -(void) addAnimationToButton:(UIButton*) button;
 

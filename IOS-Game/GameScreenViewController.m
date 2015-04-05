@@ -13,7 +13,7 @@
 @end
 
 @implementation GameScreenViewController
-@synthesize card ,btn;
+@synthesize  btn,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,6 +37,30 @@
     [card startAnimating];
 */
     [btn setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn2 setBackgroundImage:img  forState:UIControlStateNormal];
+
+    [btn3 setBackgroundImage:img  forState:UIControlStateNormal];
+
+    [btn4 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn5 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn6 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn7 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn8 setBackgroundImage:img  forState:UIControlStateNormal];
+    
+    [btn9 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn12 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn10 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn11 setBackgroundImage:img  forState:UIControlStateNormal];
+
+    [btn13 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn14 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn15 setBackgroundImage:img  forState:UIControlStateNormal];
+    [btn16 setBackgroundImage:img  forState:UIControlStateNormal];
+
+    
+
+
+    
     
     
 	// Do any additional setup after loading the view.

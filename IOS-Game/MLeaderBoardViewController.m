@@ -38,6 +38,10 @@ bool hostActive;
 
 -(void) viewWillAppear:(BOOL)animated
 {
+    self.navigationController.view.backgroundColor =
+    [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_app.png"]];
+    self.tableView.backgroundColor = [UIColor clearColor];
+
     // check for internet connection
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
@@ -144,8 +148,6 @@ bool hostActive;
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -173,7 +175,7 @@ bool hostActive;
     
     //rounded image
     cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.cornerRadius = 18.0;
+    cell.imageView.layer.cornerRadius = 25.0;
     
     //cell background image
     if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {

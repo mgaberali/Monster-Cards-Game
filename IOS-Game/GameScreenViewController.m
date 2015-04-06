@@ -56,12 +56,6 @@
     [btn14 setBackgroundImage:img  forState:UIControlStateNormal];
     [btn15 setBackgroundImage:img  forState:UIControlStateNormal];
     [btn16 setBackgroundImage:img  forState:UIControlStateNormal];
-
-    
-
-
-    
-    
     
 	// Do any additional setup after loading the view.
 }
@@ -91,12 +85,8 @@
         [UIView transitionWithView:btn duration:2 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
             [btn setBackgroundImage:[UIImage imageNamed:@"img1.png"] forState:UIControlStateNormal];
         }   completion:nil];
-        
-        
-        
-        
+
     } ];
-   
 }
 
 -(void) addAnimationToButton:(UIButton*) button{

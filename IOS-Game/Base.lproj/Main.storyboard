@@ -261,16 +261,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDI-K4-Z2c">
-                                <rect key="frame" x="13" y="118" width="51" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pressImg:" destination="78Z-3R-Nlc" eventType="touchUpInside" id="q5m-fT-Xed"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXY-C4-Fw3">
                                 <rect key="frame" x="94" y="118" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -302,7 +292,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWd-OH-kWz">
-                                <rect key="frame" x="13" y="176" width="51" height="50"/>
+                                <rect key="frame" x="20" y="176" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="5">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -312,7 +302,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9q-zg-qr5">
-                                <rect key="frame" x="86" y="176" width="51" height="50"/>
+                                <rect key="frame" x="94" y="176" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="6">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -322,7 +312,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhf-bU-PVS">
-                                <rect key="frame" x="156" y="176" width="51" height="50"/>
+                                <rect key="frame" x="163" y="176" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="7">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -332,7 +322,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFr-rj-418">
-                                <rect key="frame" x="229" y="176" width="51" height="50"/>
+                                <rect key="frame" x="236" y="176" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="8">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -342,7 +332,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDb-1a-5dm">
-                                <rect key="frame" x="20" y="226" width="51" height="50"/>
+                                <rect key="frame" x="20" y="234" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="9">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -352,9 +342,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoH-Ps-eqr">
-                                <rect key="frame" x="163" y="226" width="51" height="50"/>
+                                <rect key="frame" x="163" y="234" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="a">
+                                <state key="normal" title="11">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -362,9 +352,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-G0-Gou">
-                                <rect key="frame" x="86" y="234" width="51" height="50"/>
+                                <rect key="frame" x="94" y="234" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="a">
+                                <state key="normal" title="10">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -372,9 +362,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZ9-Hc-nZd">
-                                <rect key="frame" x="236" y="226" width="51" height="50"/>
+                                <rect key="frame" x="236" y="234" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="a">
+                                <state key="normal" title="12">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -382,9 +372,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qL8-RF-QTf">
-                                <rect key="frame" x="20" y="284" width="51" height="50"/>
+                                <rect key="frame" x="20" y="300" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="a">
+                                <state key="normal" title="13">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -392,9 +382,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVz-rL-e24">
-                                <rect key="frame" x="94" y="284" width="51" height="50"/>
+                                <rect key="frame" x="94" y="300" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="a">
+                                <state key="normal" title="14">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -402,9 +392,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXL-d7-m6K">
-                                <rect key="frame" x="163" y="284" width="51" height="50"/>
+                                <rect key="frame" x="163" y="300" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="a">
+                                <state key="normal" title="15">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -412,9 +402,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="16" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1V-qU-DLl">
-                                <rect key="frame" x="236" y="284" width="51" height="50"/>
+                                <rect key="frame" x="236" y="300" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="a">
+                                <state key="normal" title="16">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -422,11 +412,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-uy-tat">
-                                <rect key="frame" x="217" y="49" width="63" height="21"/>
+                                <rect key="frame" x="189" y="49" width="91" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDI-K4-Z2c">
+                                <rect key="frame" x="20" y="118" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressImg:" destination="78Z-3R-Nlc" eventType="touchUpInside" id="q5m-fT-Xed"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -439,7 +439,7 @@
                         <outlet property="btn13" destination="qL8-RF-QTf" id="6aJ-3t-Ljm"/>
                         <outlet property="btn14" destination="GVz-rL-e24" id="mFf-W2-r8b"/>
                         <outlet property="btn15" destination="NXL-d7-m6K" id="NtN-v2-LeQ"/>
-                        <outlet property="btn16" destination="I1V-qU-DLl" id="rhK-V9-s3r"/>
+                        <outlet property="btn16" destination="I1V-qU-DLl" id="Td9-W2-P70"/>
                         <outlet property="btn2" destination="IXY-C4-Fw3" id="t4c-Eu-u6D"/>
                         <outlet property="btn3" destination="Gq7-n1-0s1" id="0gv-so-O4M"/>
                         <outlet property="btn4" destination="dY0-K9-f5p" id="otp-N0-y0Y"/>
@@ -450,6 +450,34 @@
                         <outlet property="btn9" destination="YDb-1a-5dm" id="O7f-rs-SIo"/>
                         <outlet property="scoreLabel" destination="kEt-5R-UCP" id="lQM-U9-0un"/>
                         <outlet property="timerLabel" destination="fwB-uy-tat" id="jCe-if-3Y2"/>
+                        <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="ETc-Hh-niX"/>
+                        <outletCollection property="cardsCollection" destination="IXY-C4-Fw3" id="XkG-rs-yiG"/>
+                        <outletCollection property="cardsCollection" destination="Gq7-n1-0s1" id="7oM-vu-gHg"/>
+                        <outletCollection property="cardsCollection" destination="dY0-K9-f5p" id="KAJ-Xz-cNh"/>
+                        <outletCollection property="cardsCollection" destination="tWd-OH-kWz" id="dmo-1K-I0j"/>
+                        <outletCollection property="cardsCollection" destination="t9q-zg-qr5" id="57n-GV-YS4"/>
+                        <outletCollection property="cardsCollection" destination="uhf-bU-PVS" id="LsF-8k-XlC"/>
+                        <outletCollection property="cardsCollection" destination="xFr-rj-418" id="CYx-Wq-Cet"/>
+                        <outletCollection property="cardsCollection" destination="YDb-1a-5dm" id="mUk-Sa-MMH"/>
+                        <outletCollection property="cardsCollection" destination="eiP-G0-Gou" id="tNO-wS-TE4"/>
+                        <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="mWk-I2-PEm"/>
+                        <outletCollection property="cardsCollection" destination="IXY-C4-Fw3" id="3nE-Vh-fRl"/>
+                        <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="sJ6-ez-Yz7"/>
+                        <outletCollection property="cardsCollection" destination="IXY-C4-Fw3" id="1Bh-DO-RUy"/>
+                        <outletCollection property="cardsCollection" destination="Gq7-n1-0s1" id="71V-2i-rqy"/>
+                        <outletCollection property="cardsCollection" destination="dY0-K9-f5p" id="s86-lM-XQ9"/>
+                        <outletCollection property="cardsCollection" destination="tWd-OH-kWz" id="hjk-KR-bTS"/>
+                        <outletCollection property="cardsCollection" destination="t9q-zg-qr5" id="JNq-Nx-dUk"/>
+                        <outletCollection property="cardsCollection" destination="uhf-bU-PVS" id="O9j-gD-z7Q"/>
+                        <outletCollection property="cardsCollection" destination="xFr-rj-418" id="WCN-sm-Suo"/>
+                        <outletCollection property="cardsCollection" destination="YDb-1a-5dm" id="4Lt-iX-san"/>
+                        <outletCollection property="cardsCollection" destination="eiP-G0-Gou" id="aj8-Z5-tBA"/>
+                        <outletCollection property="cardsCollection" destination="eoH-Ps-eqr" id="QQq-sg-hWH"/>
+                        <outletCollection property="cardsCollection" destination="SZ9-Hc-nZd" id="wA6-Lo-Dpc"/>
+                        <outletCollection property="cardsCollection" destination="qL8-RF-QTf" id="ka3-2d-pvk"/>
+                        <outletCollection property="cardsCollection" destination="GVz-rL-e24" id="eJ0-Cs-HlZ"/>
+                        <outletCollection property="cardsCollection" destination="NXL-d7-m6K" id="rQ6-X6-p0h"/>
+                        <outletCollection property="cardsCollection" destination="I1V-qU-DLl" id="741-da-9Ny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhO-1A-SBt" userLabel="First Responder" sceneMemberID="firstResponder"/>

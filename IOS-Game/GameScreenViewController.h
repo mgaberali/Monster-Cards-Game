@@ -28,6 +28,9 @@
 @property IBOutlet UIButton * btn15;
 @property IBOutlet UIButton * btn16;
 
+
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsCollection;
+
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 

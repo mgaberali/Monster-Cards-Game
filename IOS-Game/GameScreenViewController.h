@@ -28,6 +28,8 @@
 @property IBOutlet UIButton * btn15;
 @property IBOutlet UIButton * btn16;
 
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 
 

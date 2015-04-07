@@ -21,10 +21,69 @@
 // signin button pressed method implementation
 - (IBAction)signupButtonPressed:(id)sender{
     
+    printf("signupButtonPressed\n");
+    
+    NSString *userName =[txtf_name text];
+    NSString *password= [txtf_password text];
+    NSString *userEmail= [txtf_email text];
+    NSString *userImage= @"aaa";
+    
+    // POST
+    
+    
+    printf("%s",[userName UTF8String]);
+    
+    NSString *parameter = [NSString stringWithFormat:@"name=%@&password=%@&email=%@&userImage=%@",userName,password,userEmail,userImage];
+    
+    
+    NSData *parameterData = [parameter dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d" , [parameterData length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    //you must change IP to your IP if you will connect on DB
+    
+    [request setURL:[NSURL URLWithString:@"http://10.145.10.245:8080/IOS-Game-Server/SignupServlet"]];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    
+    [request setHTTPBody:parameterData];
+    
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    [connection start];
+    
+    if( connection )
+    {
+        printf("connect\n");
+        
+    }else{
+        
+        //serverResponse.text = NO_CONNECTION;
+        printf("not connect\n");
+        
+        
+    }
     
     
     
 }
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    
+    
+    printf("didReceiveData\n\n\n");
+    NSString *msgFromServer = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    
+    printf("%s" , [msgFromServer UTF8String]);
+}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];

@@ -34,6 +34,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
+@property NSArray *imgArray;
+@property NSMutableArray *btnArray;
+@property BOOL flipped;
+@property UIButton *pressedBtn1, *pressedBtn2;
+
+@property UIImage * img;
+
 
 
 

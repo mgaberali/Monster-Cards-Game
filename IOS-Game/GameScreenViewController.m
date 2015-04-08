@@ -62,8 +62,6 @@ NSInteger *arr[] = { 1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
     int x=arr[0];
     //x--;
     printf("%d",x);
-    btn.layer.cornerRadius = 20; // this value vary as per your desire
-    btn.clipsToBounds = YES;
 
     /*
     [btn setBackgroundImage:img   forState:UIControlStateNormal];

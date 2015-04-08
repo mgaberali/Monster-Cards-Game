@@ -432,11 +432,16 @@
                                     <action selector="pressImg:" destination="78Z-3R-Nlc" eventType="touchUpInside" id="q5m-fT-Xed"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-Ak-reh">
+                                <rect key="frame" x="0.0" y="86" width="320" height="397"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="LVQ-Ra-7ZS"/>
                     <connections>
+                        <outlet property="celebrateView" destination="qPa-Ak-reh" id="6I2-YV-HHB"/>
                         <outlet property="scoreLabel" destination="kEt-5R-UCP" id="lQM-U9-0un"/>
                         <outlet property="timerLabel" destination="fwB-uy-tat" id="jCe-if-3Y2"/>
                         <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="B0D-Gf-T6D"/>

@@ -44,6 +44,7 @@
 
 @property UIImage * img;
 
+@property (strong, nonatomic) IBOutlet UIView *celebrateView;
 //@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsArray;
 
 

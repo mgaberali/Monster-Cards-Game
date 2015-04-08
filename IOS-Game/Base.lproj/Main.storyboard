@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="78Z-3R-Nlc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RBI-zp-oef">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -129,7 +129,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rHT-fA-7Xo" kind="push" id="oYe-x7-wgK"/>
+                                    <segue destination="rHT-fA-7Xo" kind="modal" id="ICs-Aq-z83"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-jd-lUS">
@@ -255,10 +255,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEt-5R-UCP">
-                                <rect key="frame" x="20" y="49" width="91" height="21"/>
+                                <rect key="frame" x="20" y="56" width="90" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="highlightedColor"/>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXY-C4-Fw3">
                                 <rect key="frame" x="95" y="132" width="60" height="60"/>
@@ -410,11 +413,14 @@
                                     <action selector="pressImg:" destination="78Z-3R-Nlc" eventType="touchUpInside" id="Pru-l9-djL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-uy-tat">
-                                <rect key="frame" x="189" y="49" width="91" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-uy-tat">
+                                <rect key="frame" x="185" y="56" width="100" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="highlightedColor"/>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDI-K4-Z2c">
                                 <rect key="frame" x="25" y="132" width="60" height="60"/>
@@ -449,40 +455,28 @@
                         <outlet property="btn9" destination="YDb-1a-5dm" id="O7f-rs-SIo"/>
                         <outlet property="scoreLabel" destination="kEt-5R-UCP" id="lQM-U9-0un"/>
                         <outlet property="timerLabel" destination="fwB-uy-tat" id="jCe-if-3Y2"/>
-                        <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="ETc-Hh-niX"/>
-                        <outletCollection property="cardsCollection" destination="IXY-C4-Fw3" id="XkG-rs-yiG"/>
-                        <outletCollection property="cardsCollection" destination="Gq7-n1-0s1" id="7oM-vu-gHg"/>
-                        <outletCollection property="cardsCollection" destination="dY0-K9-f5p" id="KAJ-Xz-cNh"/>
-                        <outletCollection property="cardsCollection" destination="tWd-OH-kWz" id="dmo-1K-I0j"/>
-                        <outletCollection property="cardsCollection" destination="t9q-zg-qr5" id="57n-GV-YS4"/>
-                        <outletCollection property="cardsCollection" destination="uhf-bU-PVS" id="LsF-8k-XlC"/>
-                        <outletCollection property="cardsCollection" destination="xFr-rj-418" id="CYx-Wq-Cet"/>
-                        <outletCollection property="cardsCollection" destination="YDb-1a-5dm" id="mUk-Sa-MMH"/>
-                        <outletCollection property="cardsCollection" destination="eiP-G0-Gou" id="tNO-wS-TE4"/>
-                        <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="mWk-I2-PEm"/>
-                        <outletCollection property="cardsCollection" destination="IXY-C4-Fw3" id="3nE-Vh-fRl"/>
-                        <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="sJ6-ez-Yz7"/>
-                        <outletCollection property="cardsCollection" destination="IXY-C4-Fw3" id="1Bh-DO-RUy"/>
-                        <outletCollection property="cardsCollection" destination="Gq7-n1-0s1" id="71V-2i-rqy"/>
-                        <outletCollection property="cardsCollection" destination="dY0-K9-f5p" id="s86-lM-XQ9"/>
-                        <outletCollection property="cardsCollection" destination="tWd-OH-kWz" id="hjk-KR-bTS"/>
-                        <outletCollection property="cardsCollection" destination="t9q-zg-qr5" id="JNq-Nx-dUk"/>
-                        <outletCollection property="cardsCollection" destination="uhf-bU-PVS" id="O9j-gD-z7Q"/>
-                        <outletCollection property="cardsCollection" destination="xFr-rj-418" id="WCN-sm-Suo"/>
-                        <outletCollection property="cardsCollection" destination="YDb-1a-5dm" id="4Lt-iX-san"/>
-                        <outletCollection property="cardsCollection" destination="eiP-G0-Gou" id="aj8-Z5-tBA"/>
-                        <outletCollection property="cardsCollection" destination="eoH-Ps-eqr" id="QQq-sg-hWH"/>
-                        <outletCollection property="cardsCollection" destination="SZ9-Hc-nZd" id="wA6-Lo-Dpc"/>
-                        <outletCollection property="cardsCollection" destination="qL8-RF-QTf" id="ka3-2d-pvk"/>
-                        <outletCollection property="cardsCollection" destination="GVz-rL-e24" id="eJ0-Cs-HlZ"/>
-                        <outletCollection property="cardsCollection" destination="NXL-d7-m6K" id="rQ6-X6-p0h"/>
-                        <outletCollection property="cardsCollection" destination="I1V-qU-DLl" id="741-da-9Ny"/>
+                        <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="B0D-Gf-T6D"/>
+                        <outletCollection property="cardsCollection" destination="IXY-C4-Fw3" id="njo-gi-j8c"/>
+                        <outletCollection property="cardsCollection" destination="Gq7-n1-0s1" id="Xpo-O5-i7F"/>
+                        <outletCollection property="cardsCollection" destination="dY0-K9-f5p" id="JWG-em-22H"/>
+                        <outletCollection property="cardsCollection" destination="tWd-OH-kWz" id="ljT-nk-Nv7"/>
+                        <outletCollection property="cardsCollection" destination="t9q-zg-qr5" id="gYD-bq-J4V"/>
+                        <outletCollection property="cardsCollection" destination="uhf-bU-PVS" id="3ht-Be-nPl"/>
+                        <outletCollection property="cardsCollection" destination="xFr-rj-418" id="KdR-aU-Xnj"/>
+                        <outletCollection property="cardsCollection" destination="YDb-1a-5dm" id="tyz-7h-Zcy"/>
+                        <outletCollection property="cardsCollection" destination="eiP-G0-Gou" id="sJO-13-88T"/>
+                        <outletCollection property="cardsCollection" destination="eoH-Ps-eqr" id="TFn-4r-pPE"/>
+                        <outletCollection property="cardsCollection" destination="SZ9-Hc-nZd" id="2qK-1a-B9Z"/>
+                        <outletCollection property="cardsCollection" destination="qL8-RF-QTf" id="ASC-DT-U86"/>
+                        <outletCollection property="cardsCollection" destination="GVz-rL-e24" id="z5I-Qx-9YV"/>
+                        <outletCollection property="cardsCollection" destination="NXL-d7-m6K" id="Ugy-Ui-0Jq"/>
+                        <outletCollection property="cardsCollection" destination="I1V-qU-DLl" id="jwV-8L-nzc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhO-1A-SBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="IvT-lG-cAw"/>
             </objects>
-            <point key="canvasLocation" x="227" y="-563"/>
+            <point key="canvasLocation" x="-135" y="-612"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Zza-j7-Mb5">
@@ -561,6 +555,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="N8V-rx-dK6">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vjY-cb-6t2" kind="relationship" relationship="rootViewController" id="8VY-Le-Aal"/>
                     </connections>

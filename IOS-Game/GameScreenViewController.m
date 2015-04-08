@@ -15,7 +15,7 @@
 @implementation GameScreenViewController
 
 NSInteger *arr[] = { 1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
-@synthesize  btn,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16;
+//@synthesize  btn,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16;
 @synthesize imgArray,btnArray,flipped ,pressedBtn1,pressedBtn2;
 @synthesize img;
 
@@ -62,6 +62,10 @@ NSInteger *arr[] = { 1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
     int x=arr[0];
     //x--;
     printf("%d",x);
+    btn.layer.cornerRadius = 20; // this value vary as per your desire
+    btn.clipsToBounds = YES;
+
+    /*
     [btn setBackgroundImage:img   forState:UIControlStateNormal];
     [btn2 setBackgroundImage:img  forState:UIControlStateNormal];
     
@@ -83,10 +87,10 @@ NSInteger *arr[] = { 1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
     [btn15 setBackgroundImage:img  forState:UIControlStateNormal];
     [btn16 setBackgroundImage:img  forState:UIControlStateNormal];
     
-    
+    */
     
 	// Do any additional setup after loading the view.
-    UIImage * img=[UIImage imageNamed:@"default.png"];
+    //UIImage * img=[UIImage imageNamed:@"default.png"];
     //NSArray * images=[NSArray new];
     //images = @[[UIImage imageNamed:@"img1.png"],
     //    [UIImage imageNamed:@"img2.png"],
@@ -96,11 +100,14 @@ NSInteger *arr[] = { 1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
     card.animationRepeatCount = 1;
     [card startAnimating];
 */
-    /*
+   
     for (UIButton *card in _cardsCollection) {
+        //card.adjustsImageWhenHighlighted = NO;
+        card.layer.cornerRadius = 30; // this value vary as per your desire
+        card.clipsToBounds = YES;
         [card setBackgroundImage:img  forState:UIControlStateNormal];
     }
-     */
+    
     
    	// Do any additional setup after loading the view.
 }
@@ -112,8 +119,11 @@ NSInteger *arr[] = { 1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
 }
 
 -(IBAction)pressImg:(id)sender{
-    [self playSound];
-    printf("kmlmlkmklm");
+   
+    
+    if (pressedBtn1 == nil || pressedBtn2 == nil && (sender != pressedBtn1 && sender != pressedBtn2)) {
+        [self playSound];
+        printf("kmlmlkmklm");
     if(flipped==NO){
         pressedBtn1=(UIButton *)sender;
         flipped=YES;
@@ -134,29 +144,31 @@ NSInteger *arr[] = { 1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
                 
                 if(x!=x2)
                 {
-                    [UIView transitionWithView:pressedBtn2 duration:2 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+                    [UIView transitionWithView:pressedBtn2 duration:1.5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
                         [pressedBtn2 setBackgroundImage:img forState:UIControlStateNormal];
                     }   completion:nil];
-                    
                     
                     [UIView transitionWithView:pressedBtn1 duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
                         [pressedBtn1 setBackgroundImage:img forState:UIControlStateNormal];
                     }   completion:nil];
                     
+                    pressedBtn2 = pressedBtn1 = nil;
                     
                 } else{
                     [pressedBtn1 setEnabled:NO];
                     [pressedBtn2 setEnabled:NO];
+                    pressedBtn2 = pressedBtn1 = nil;
+
                 }
             } ];
             flipped=NO;
             
-            
         }
+    }
+        
     }
     
 }
-
 
 -(void) addAnimationToButton:(UIButton*) button{
     UIImageView* animationView = [button imageView];

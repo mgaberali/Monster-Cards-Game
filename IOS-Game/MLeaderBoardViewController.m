@@ -42,9 +42,8 @@ bool hostActive;
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    self.navigationController.view.backgroundColor =
-    [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_app.png"]];
-    self.tableView.backgroundColor = [UIColor clearColor];
+    //self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_app.png"]];
+    //self.tableView.backgroundColor = [UIColor clearColor];
     
     // check for internet connection
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
@@ -79,13 +78,15 @@ bool hostActive;
     [self addWinnersToPlist];
     [self getWinnersFromPlist];
     
+    
     printf("Getting top users\n");
     NSURL *url=[[NSURL alloc]initWithString:@"http://10.145.10.245:8080/IOS-Game-Server/TopTen"];
     NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
     NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
-    [connection start];
+    //[connection start];
     
     response = @"";
+    
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -220,21 +221,21 @@ bool hostActive;
     cell.imageView.layer.cornerRadius = 25.0;
     
     //cell background image
-//    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
-//        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default.jpg"]];
-//    } else {
-//        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_orange.png"]];
-//    }
+    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default.jpg"]];
+    } else {
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_orange.png"]];
+    }
     
     
     //text label font style
-//    cell.textLabel.font = [UIFont fontWithName: @"Arial Rounded MT Bold" size: 20.0];
-//    cell.textLabel.shadowColor = [UIColor blackColor];
-//    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.font = [UIFont fontWithName: @"Arial Rounded MT Bold" size: 20.0];
+    cell.textLabel.shadowColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
 //    
 //    //detail text label font style
-//    cell.detailTextLabel.font = [UIFont fontWithName: @"Arial Rounded MT Bold" size: 16.0];
-//    cell.detailTextLabel.shadowColor = [UIColor whiteColor];
+    cell.detailTextLabel.font = [UIFont fontWithName: @"Arial Rounded MT Bold" size: 16.0];
+    cell.detailTextLabel.shadowColor = [UIColor whiteColor];
     
     //    [cell.imageView setBounds:CGRectMake(0, 0, 40, 40)];
     //    [cell.imageView setClipsToBounds:NO];
@@ -246,23 +247,23 @@ bool hostActive;
     
     
     // Configure the cell...
-    //    if (_winnersArray != nil) {
-    //        if ([[[_winnersArray objectAtIndex:indexPath.row] winnerImage] isEqualToString:@"hal.gmail"]) {
-    //        }
-    //        NSString *imageName = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
-    //        NSMutableString *scoreString= [[NSMutableString alloc] initWithString:@"Score "];
-    //        [scoreString appendString:[[[_winnersArray objectAtIndex:indexPath.row] score] stringValue]];
-    //        UIImage *scaledImage = [self scaleImage:[UIImage imageNamed:imageName]];
-    //        cell.textLabel.text = [[_winnersArray objectAtIndex:indexPath.row] name];
-    //        cell.imageView.image =scaledImage;
-    //        cell.detailTextLabel.text = scoreString;
-    //
-    //    } else {
-    //        cell.textLabel.text = @"default";
-    //        cell.detailTextLabel.text = @"default";
-    //    }
+    if (_winnersArray != nil) {
+            if ([[[_winnersArray objectAtIndex:indexPath.row] winnerImage] isEqualToString:@"hal.gmail"]) {
+            }
+            NSString *imageName = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
+            NSMutableString *scoreString= [[NSMutableString alloc] initWithString:@"Score "];
+            [scoreString appendString:[[[_winnersArray objectAtIndex:indexPath.row] score] stringValue]];
+            UIImage *scaledImage = [self scaleImage:[UIImage imageNamed:imageName]];
+            cell.textLabel.text = [[_winnersArray objectAtIndex:indexPath.row] name];
+            cell.imageView.image =scaledImage;
+            cell.detailTextLabel.text = scoreString;
     
-    cell.textLabel.text = [names objectAtIndex:indexPath.row];
+        } else {
+            cell.textLabel.text = @"default";
+            cell.detailTextLabel.text = @"default";
+        }
+    
+    //cell.textLabel.text = [names objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -293,10 +294,10 @@ bool hostActive;
 
 //change the style of the cell of the player
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
-//        cell.textLabel.text = @"Me";
-//        cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"highlightedBG.png"]];
-//    }
+    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
+        cell.textLabel.text = @"Me";
+        cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"highlightedBG.png"]];
+    }
 }
 
 

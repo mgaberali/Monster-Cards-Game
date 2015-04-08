@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface GameScreenViewController : UIViewController
 
+/*
 @property IBOutlet UIButton * btn;
 @property IBOutlet UIButton * btn2;
 @property IBOutlet UIButton * btn3;
@@ -27,9 +29,10 @@
 @property IBOutlet UIButton * btn14;
 @property IBOutlet UIButton * btn15;
 @property IBOutlet UIButton * btn16;
-
+*/
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsCollection;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
@@ -41,6 +44,7 @@
 
 @property UIImage * img;
 
+//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsArray;
 
 
 

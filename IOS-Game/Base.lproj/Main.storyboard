@@ -437,22 +437,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="LVQ-Ra-7ZS"/>
                     <connections>
-                        <outlet property="btn" destination="TDI-K4-Z2c" id="tAh-Cu-9fl"/>
-                        <outlet property="btn10" destination="eiP-G0-Gou" id="Wrf-wb-Tgk"/>
-                        <outlet property="btn11" destination="eoH-Ps-eqr" id="PkK-Tj-o3r"/>
-                        <outlet property="btn12" destination="SZ9-Hc-nZd" id="xrS-YW-KUZ"/>
-                        <outlet property="btn13" destination="qL8-RF-QTf" id="6aJ-3t-Ljm"/>
-                        <outlet property="btn14" destination="GVz-rL-e24" id="mFf-W2-r8b"/>
-                        <outlet property="btn15" destination="NXL-d7-m6K" id="NtN-v2-LeQ"/>
-                        <outlet property="btn16" destination="I1V-qU-DLl" id="Td9-W2-P70"/>
-                        <outlet property="btn2" destination="IXY-C4-Fw3" id="t4c-Eu-u6D"/>
-                        <outlet property="btn3" destination="Gq7-n1-0s1" id="0gv-so-O4M"/>
-                        <outlet property="btn4" destination="dY0-K9-f5p" id="otp-N0-y0Y"/>
-                        <outlet property="btn5" destination="tWd-OH-kWz" id="JQ6-OZ-KaR"/>
-                        <outlet property="btn6" destination="t9q-zg-qr5" id="r2s-Mh-Qjg"/>
-                        <outlet property="btn7" destination="uhf-bU-PVS" id="W7G-AI-ROL"/>
-                        <outlet property="btn8" destination="xFr-rj-418" id="4lf-jz-Gre"/>
-                        <outlet property="btn9" destination="YDb-1a-5dm" id="O7f-rs-SIo"/>
                         <outlet property="scoreLabel" destination="kEt-5R-UCP" id="lQM-U9-0un"/>
                         <outlet property="timerLabel" destination="fwB-uy-tat" id="jCe-if-3Y2"/>
                         <outletCollection property="cardsCollection" destination="TDI-K4-Z2c" id="B0D-Gf-T6D"/>

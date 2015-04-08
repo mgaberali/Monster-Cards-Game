@@ -20,10 +20,76 @@
 
 // signin button pressed method implementation
 - (IBAction)signinButtonPressed:(id)sender{
+    
     ////////hey///////
     
+    printf("signinButtonPressed");
+    
+    NSString * mail=[txtf_email text];
+    
+    NSString * password=[txtf_password text];
+    
+    BOOL mailNotEmpty = mail != nil && ![mail isEqualToString:@""];
+    BOOL passwordNotEmpty = password != nil && ![password isEqualToString:@""];
+    
+    if (mailNotEmpty && passwordNotEmpty) {
+        
+        NSString *parameter = [NSString stringWithFormat:@"mail=%@&password=%@",mail,password];
+        
+        
+        NSData *parameterData = [parameter dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        
+        NSString *postLength = [NSString stringWithFormat:@"%d" , [parameterData length]];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        
+        [request setURL:[NSURL URLWithString:@"http://10.145.10.245:8080/IOS-Game-Server/LoginServlet"]];
+        
+        [request setHTTPMethod:@"POST"];
+        
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        
+        [request setHTTPBody:parameterData];
+        
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        
+        [connection start];
+        
+        if( connection )
+        {
+            printf("connect\n");
+            
+            //open home view
+            //identify in storyboard ->home
+            //
+            
+//            UIPageViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+//            [self presentViewController:newView animated:YES completion:nil];
+//            [self.navigationController pushViewController:newView animated:nil];
+            
+        }else{
+            
+            printf("not connect");
+            
+            //open login view again
+            
+        }
+        
+    }
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     
     
+    printf("didReceiveData\n");
+    
+    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    
+    printf("%s" , [result UTF8String]);
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

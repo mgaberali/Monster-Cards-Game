@@ -20,6 +20,10 @@
 NSString *fullPath;
 NSString *filePath;
 
+NSString* response;
+
+NSMutableArray* names;
+
 //connection
 Reachability *internetReachableFoo;
 bool hostActive;
@@ -32,7 +36,7 @@ bool hostActive;
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        }
+    }
     return self;
 }
 
@@ -41,7 +45,7 @@ bool hostActive;
     self.navigationController.view.backgroundColor =
     [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_app.png"]];
     self.tableView.backgroundColor = [UIColor clearColor];
-
+    
     // check for internet connection
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
@@ -58,24 +62,57 @@ bool hostActive;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self setTitle:@"Leader Board"];
-
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //initiating plist file path
     filePath = @"/Users/participant/Desktop/IOS-GAME-GIT/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
-
+    
     [self addWinnersToPlist];
     [self getWinnersFromPlist];
     
+    printf("Getting top users\n");
+    NSURL *url=[[NSURL alloc]initWithString:@"http://10.145.10.245:8080/IOS-Game-Server/TopTen"];
+    NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
+    NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
+    [connection start];
     
+    response = @"";
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    response = [response stringByAppendingString:dataString];
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    printf("%s\n", [response UTF8String]);
+    
+    NSData* data = [response dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray* dictionaries = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    names = [NSMutableArray new];
+    
+    for (NSDictionary* dictionary in dictionaries) {
+        NSString* name = [dictionary objectForKey:@"name"];
+        [names addObject:name];
+    }
+    
+    printf("----------------------------\n");
+    printf("Names:\n");
+    for (NSString* name in names) {
+        printf("Name: %s\n", [name UTF8String]);
+    }
+    
+    [self.tableView reloadData];
 }
 
 -(void) addWinnersToPlist{
@@ -102,7 +139,7 @@ bool hostActive;
     NSData *winnerData8 = [NSKeyedArchiver archivedDataWithRootObject:winner2];
     NSData *winnerData9 = [NSKeyedArchiver archivedDataWithRootObject:winner2];
     NSData *winnerData10 = [NSKeyedArchiver archivedDataWithRootObject:winner];
-
+    
     
     
     //add the archived objects to an array and write the array to the plist file
@@ -122,7 +159,7 @@ bool hostActive;
 }
 
 -(void) getWinnersFromPlist{
-
+    
     //initialize the winners array that will hold the winners unarchived objects
     _winnersArray = [[NSMutableArray alloc] init];
     
@@ -136,7 +173,7 @@ bool hostActive;
         [_winnersArray addObject:winnerRead];
         printf("%s  ", [[winnerRead name] UTF8String]);
     }
-
+    
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
@@ -157,6 +194,11 @@ bool hostActive;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    
+    if (names != nil) {
+        return [names count];
+    }
+    
     if (_winnersArray != nil) {
         return _winnersArray.count;
     } else {
@@ -178,47 +220,49 @@ bool hostActive;
     cell.imageView.layer.cornerRadius = 25.0;
     
     //cell background image
-    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default.jpg"]];
-    } else {
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_orange.png"]];
-    }
+//    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
+//        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default.jpg"]];
+//    } else {
+//        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_orange.png"]];
+//    }
     
     
     //text label font style
-    cell.textLabel.font = [UIFont fontWithName: @"Arial Rounded MT Bold" size: 20.0];
-    cell.textLabel.shadowColor = [UIColor blackColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
+//    cell.textLabel.font = [UIFont fontWithName: @"Arial Rounded MT Bold" size: 20.0];
+//    cell.textLabel.shadowColor = [UIColor blackColor];
+//    cell.textLabel.textColor = [UIColor whiteColor];
+//    
+//    //detail text label font style
+//    cell.detailTextLabel.font = [UIFont fontWithName: @"Arial Rounded MT Bold" size: 16.0];
+//    cell.detailTextLabel.shadowColor = [UIColor whiteColor];
     
-    //detail text label font style
-    cell.detailTextLabel.font = [UIFont fontWithName: @"Arial Rounded MT Bold" size: 16.0];
-    cell.detailTextLabel.shadowColor = [UIColor whiteColor];
+    //    [cell.imageView setBounds:CGRectMake(0, 0, 40, 40)];
+    //    [cell.imageView setClipsToBounds:NO];
+    //    [cell.imageView setFrame:CGRectMake(0, 0, 40, 40)];
+    //    [cell.imageView setContentMode:UIViewContentModeScaleAspectFill];
     
-//    [cell.imageView setBounds:CGRectMake(0, 0, 40, 40)];
-//    [cell.imageView setClipsToBounds:NO];
-//    [cell.imageView setFrame:CGRectMake(0, 0, 40, 40)];
-//    [cell.imageView setContentMode:UIViewContentModeScaleAspectFill];
-
     //cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, 75,75);
     
     
     
     // Configure the cell...
-    if (_winnersArray != nil) {
-        if ([[[_winnersArray objectAtIndex:indexPath.row] winnerImage] isEqualToString:@"hal.gmail"]) {
-        }
-        NSString *imageName = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
-        NSMutableString *scoreString= [[NSMutableString alloc] initWithString:@"Score "];
-        [scoreString appendString:[[[_winnersArray objectAtIndex:indexPath.row] score] stringValue]];
-        UIImage *scaledImage = [self scaleImage:[UIImage imageNamed:imageName]];
-        cell.textLabel.text = [[_winnersArray objectAtIndex:indexPath.row] name];
-        cell.imageView.image =scaledImage;
-        cell.detailTextLabel.text = scoreString;
-        
-    } else {
-        cell.textLabel.text = @"default";
-        cell.detailTextLabel.text = @"default";
-    }
+    //    if (_winnersArray != nil) {
+    //        if ([[[_winnersArray objectAtIndex:indexPath.row] winnerImage] isEqualToString:@"hal.gmail"]) {
+    //        }
+    //        NSString *imageName = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
+    //        NSMutableString *scoreString= [[NSMutableString alloc] initWithString:@"Score "];
+    //        [scoreString appendString:[[[_winnersArray objectAtIndex:indexPath.row] score] stringValue]];
+    //        UIImage *scaledImage = [self scaleImage:[UIImage imageNamed:imageName]];
+    //        cell.textLabel.text = [[_winnersArray objectAtIndex:indexPath.row] name];
+    //        cell.imageView.image =scaledImage;
+    //        cell.detailTextLabel.text = scoreString;
+    //
+    //    } else {
+    //        cell.textLabel.text = @"default";
+    //        cell.detailTextLabel.text = @"default";
+    //    }
+    
+    cell.textLabel.text = [names objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -249,63 +293,63 @@ bool hostActive;
 
 //change the style of the cell of the player
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
-        cell.textLabel.text = @"Me";
-        cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"highlightedBG.png"]];
-    }
+//    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
+//        cell.textLabel.text = @"Me";
+//        cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"highlightedBG.png"]];
+//    }
 }
 
 
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
+ #pragma mark - Navigation
+ 
+ // In a story board-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ 
  */
 
 // Checks if we have an internet connection or not

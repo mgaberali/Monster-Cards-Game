@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class Reachability;
 
-@interface MLeaderBoardViewController : UITableViewController
+@interface MLeaderBoardViewController : UITableViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {
     Reachability* internetReachable;
     Reachability* hostReachable;

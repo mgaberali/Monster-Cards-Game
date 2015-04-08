@@ -69,7 +69,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signinButtonPressed:" destination="vjY-cb-6t2" eventType="touchUpInside" id="OnR-Hn-qfQ"/>
-                                    <segue destination="RBI-zp-oef" kind="push" id="Lat-IS-YVh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCz-Ma-ZR8">
@@ -100,7 +99,7 @@
         <!--Home View Controller-->
         <scene sceneID="odC-7q-be5">
             <objects>
-                <viewController id="RBI-zp-oef" customClass="MHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" id="RBI-zp-oef" customClass="MHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CkS-BE-qfM"/>
                         <viewControllerLayoutGuide type="bottom" id="nrw-y3-wTS"/>

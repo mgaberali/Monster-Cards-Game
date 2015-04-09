@@ -23,11 +23,16 @@ UIImage *cardDefaultImage;
 UIButton *firstCard;
 UIButton *secondCard;
 int score = 0;
+//sound
+bool soundOn = YES;
 
-//NSInteger *arr[] = { 1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8};
-//@synthesize  btn,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16;
+//timer
+int timeSec = 0;
+int timeMin = 0;
+NSTimer *timer;
+int timeInSeconds = 0;
+
 @synthesize imgArray,btnArray,flipped ,pressedBtn1,pressedBtn2;
-//@synthesize img;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,8 +43,13 @@ int score = 0;
     return self;
 }
 
+
 - (void)viewDidLoad
 {
+    
+    //timer
+    [self StartTimer];
+    
     //celebration subview
     [self.view addSubview:_celebrateView];
     [super viewDidLoad];
@@ -96,6 +106,60 @@ int score = 0;
     // Dispose of any resources that can be recreated.
 }
 
+//Call This to Start timer, will tick every second
+-(void) StartTimer{
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+}
+
+//Event called every time the NSTimer ticks.
+- (void)timerTick:(NSTimer *)timer{
+    timeInSeconds++;
+    timeSec++;
+    if (timeSec == 60)
+    {
+        timeSec = 0;
+        timeMin++;
+    }
+    //Format the string 00:00
+    NSString* timeNow = [NSString stringWithFormat:@"%02d:%02d", timeMin, timeSec];
+    //Display on your label
+    //[timeLabel setStringValue:timeNow];
+    _timerLabel.text= timeNow;
+}
+
+//Call this to stop the timer event(could use as a 'Pause' or 'Reset')
+- (void) StopTimer
+{
+    [timer invalidate];
+    
+    timeSec = 0;
+    timeMin = 0;
+    /*
+    //Since we reset here, and timerTick won't update your label again, we need to refresh it again.
+    //Format the string in 00:00
+    NSString* timeNow = [NSString stringWithFormat:@"%02d:%02d", timeMin, timeSec];
+    //Display on your label
+    // [timeLabel setStringValue:timeNow];
+    _timerLabel.text= timeNow;
+    */
+}
+
+- (IBAction)soundsetting:(id)sender {
+    soundOn = !soundOn;
+    printf("sound on");
+    if (soundOn) {
+        //UIButton* button = (UIButton *) sender;
+        [_soundButton setBackgroundImage:[UIImage imageNamed:@"soundOn.png"] forState:UIControlStateNormal];
+    } else {
+        [_soundButton setBackgroundImage:[UIImage imageNamed:@"soundOff.png"]forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)stopGame:(id)sender {
+    [self StopTimer];
+}
+
 -(IBAction)pressImg:(id)sender{
     
     if ( (firstCard == nil || secondCard == nil) && (sender != firstCard && sender != secondCard)) {
@@ -145,6 +209,7 @@ int score = 0;
                         score+=20;
                         _scoreLabel.text = [NSString stringWithFormat:@"%d",score];
                         
+                        [self calcScore];
                         //update array of cards that are flipped
                         int firstIndex = [firstCard tag]-1;
                         int secondIndex = [secondCard tag]-1;
@@ -161,9 +226,10 @@ int score = 0;
                             }
                         }
                         if (celebrate) {
+                            [self StopTimer];
                             printf("celebrating>>>>>>>>");
                             _celebrateView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"celebrate.png"]];
-                            //self.tableView.backgroundColor = [UIColor clearColor];
+                            
                         } else{
                             printf("no celebration");
                         }
@@ -177,7 +243,16 @@ int score = 0;
     }
 }
 
-/*
+-(int) calcScore{
+    int finalScore = score;
+    int timeBonus =  0;
+    for (int i = 1; i<=timeInSeconds; i++) {
+        score += 100/i;
+        _scoreLabel.text = [NSString stringWithFormat:@"%d",score];
+    }
+    finalScore+= timeBonus;
+    return finalScore;
+}
 -(void) addAnimationToButton:(UIButton*) button{
     UIImageView* animationView = [button imageView];
     NSArray* animations=[NSArray arrayWithObjects:
@@ -191,7 +266,7 @@ int score = 0;
     [animationView setAnimationDuration:animationDuration];
     [animationView setAnimationRepeatCount:0]; //0 is infinite
 }
-*/
+
 
 -(void) playSound:(NSString *) soundName{
     /*
@@ -219,14 +294,17 @@ int score = 0;
             break;
     }
     */
-    SystemSoundID soundID;
-    
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:soundName ofType:@"wav"];
-    NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
-    
-    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)soundUrl, &soundID);
-    AudioServicesPlaySystemSound(soundID);
+    if (soundOn) {
+        SystemSoundID soundID;
+        
+        NSString *soundPath = [[NSBundle mainBundle] pathForResource:soundName ofType:@"wav"];
+        NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
+        
+        AudioServicesCreateSystemSoundID ((__bridge CFURLRef)soundUrl, &soundID);
+        AudioServicesPlaySystemSound(soundID);
 
+    }
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

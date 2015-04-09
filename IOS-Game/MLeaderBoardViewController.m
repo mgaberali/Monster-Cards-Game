@@ -222,7 +222,7 @@ bool hostActive;
     
     //cell background image
     if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default.jpg"]];
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"highlightedBG.png"]];
     } else {
         cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_orange.png"]];
     }

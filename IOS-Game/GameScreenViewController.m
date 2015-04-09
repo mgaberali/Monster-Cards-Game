@@ -177,6 +177,7 @@ int score = 0;
     }
 }
 
+/*
 -(void) addAnimationToButton:(UIButton*) button{
     UIImageView* animationView = [button imageView];
     NSArray* animations=[NSArray arrayWithObjects:
@@ -190,7 +191,7 @@ int score = 0;
     [animationView setAnimationDuration:animationDuration];
     [animationView setAnimationRepeatCount:0]; //0 is infinite
 }
-
+*/
 
 -(void) playSound:(NSString *) soundName{
     /*

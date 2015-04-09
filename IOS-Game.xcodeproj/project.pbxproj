@@ -39,6 +39,8 @@
 		D19AA4F81AD1F57A008E67EE /* btn_register.png in Resources */ = {isa = PBXBuildFile; fileRef = D19AA4F61AD1F57A008E67EE /* btn_register.png */; };
 		D19AA4F91AD1F57A008E67EE /* btn_save.png in Resources */ = {isa = PBXBuildFile; fileRef = D19AA4F71AD1F57A008E67EE /* btn_save.png */; };
 		D1A11FA81AD5EB6F00D67DEF /* celebrate.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A11FA71AD5EB6F00D67DEF /* celebrate.png */; };
+		D1A2792F1AD698F20081E716 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792D1AD698F20081E716 /* img1.png */; };
+		D1A279301AD698F20081E716 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792E1AD698F20081E716 /* img2.png */; };
 		D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */; };
 		D1A882A91AC960C3009C435D /* MLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882A81AC960C3009C435D /* MLoginViewController.m */; };
 		D1A882AC1AC963FE009C435D /* MRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882AB1AC963FE009C435D /* MRegisterViewController.m */; };
@@ -117,6 +119,8 @@
 		D19AA4F61AD1F57A008E67EE /* btn_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_register.png; sourceTree = "<group>"; };
 		D19AA4F71AD1F57A008E67EE /* btn_save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_save.png; sourceTree = "<group>"; };
 		D1A11FA71AD5EB6F00D67DEF /* celebrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celebrate.png; sourceTree = "<group>"; };
+		D1A2792D1AD698F20081E716 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
+		D1A2792E1AD698F20081E716 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
 		D1A4E43C1AC871C50016389F /* MSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSplashScreenViewController.h; sourceTree = "<group>"; };
 		D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSplashScreenViewController.m; sourceTree = "<group>"; };
 		D1A882A71AC960C3009C435D /* MLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLoginViewController.h; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 		D1F5F94D1AD142BB00455DFF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D1A2792D1AD698F20081E716 /* img1.png */,
+				D1A2792E1AD698F20081E716 /* img2.png */,
 				D1A11FA71AD5EB6F00D67DEF /* celebrate.png */,
 				D19683811AD56AA8006A8D3D /* question.png */,
 				D194EC571AD40ACB00DAE40A /* andl.jpg */,
@@ -440,6 +446,7 @@
 				D1F5F94C1AD142B600455DFF /* WinnersPList.plist in Resources */,
 				D19AA4E91AD1E89B008E67EE /* btn_facebook_share.png in Resources */,
 				D1F5F9461AD142B600455DFF /* default.jpg in Resources */,
+				D1A2792F1AD698F20081E716 /* img1.png in Resources */,
 				D19AA4EF1AD1E89B008E67EE /* btn_signup.png in Resources */,
 				D19AA4F51AD1EBE4008E67EE /* img2.png in Resources */,
 				D19AA4F41AD1EBE4008E67EE /* img1.png in Resources */,
@@ -448,6 +455,7 @@
 				D194EC611AD40ACB00DAE40A /* roz.jpg in Resources */,
 				D1961A081AD1DDC1007D2FDB /* flip.wav in Resources */,
 				D1AAF8A51AC719CD00E42A2D /* Images.xcassets in Resources */,
+				D1A279301AD698F20081E716 /* img2.png in Resources */,
 				D1AAF8971AC719CD00E42A2D /* InfoPlist.strings in Resources */,
 				D1F5F94B1AD142B600455DFF /* img.jpg in Resources */,
 				D194EC5D1AD40ACB00DAE40A /* andl.jpg in Resources */,

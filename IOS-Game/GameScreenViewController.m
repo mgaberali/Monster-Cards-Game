@@ -7,6 +7,7 @@
 //
 
 #import "GameScreenViewController.h"
+#import "MHomeViewController.h"
 
 @interface GameScreenViewController ()
 
@@ -16,7 +17,7 @@
 
 int numberOfCards = 16;
 NSArray *imagesArray;
-BOOL canFlipArray[] = {YES,YES,YES,YES,YES,YES,YES,YES,YES,YES,YES,YES,YES,YES,YES,YES};
+BOOL canFlipArray[16];
 NSMutableArray *cardsImagesNumbersArray;
 bool canFlip;
 UIImage *cardDefaultImage;
@@ -46,6 +47,17 @@ int timeInSeconds = 0;
 
 - (void)viewDidLoad
 {
+    numberOfCards = 16;
+    score = 0;
+    soundOn = YES;
+    timeSec = 0;
+    timeMin = 0;
+    timeInSeconds = 0;
+    
+    //canFlipArray = BOOL canFlipArray[16];
+    for (int i =0; i<numberOfCards; i++) {
+        canFlipArray[i] = YES;
+    }
     
     //timer
     [self StartTimer];
@@ -129,7 +141,7 @@ int timeInSeconds = 0;
 }
 
 //Call this to stop the timer event(could use as a 'Pause' or 'Reset')
-- (void) StopTimer
+- (void) stopTimer
 {
     [timer invalidate];
     
@@ -157,7 +169,12 @@ int timeInSeconds = 0;
 }
 
 - (IBAction)stopGame:(id)sender {
-    [self StopTimer];
+    [self stopTimer];
+    MHomeViewController *home = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+    [self presentViewController:home animated:YES completion:^(void){
+        home.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",score];
+    }];
+    
 }
 
 -(IBAction)pressImg:(id)sender{
@@ -202,14 +219,12 @@ int timeInSeconds = 0;
                         firstCard = secondCard = nil;
                         
                     } else{
-                        [self playSound:@"victory"];
                         [firstCard setEnabled:NO];
                         [secondCard setEnabled:NO];
                         
-                        score+=20;
+                        score+=200;
                         _scoreLabel.text = [NSString stringWithFormat:@"%d",score];
                         
-                        [self calcScore];
                         //update array of cards that are flipped
                         int firstIndex = [firstCard tag]-1;
                         int secondIndex = [secondCard tag]-1;
@@ -226,7 +241,9 @@ int timeInSeconds = 0;
                             }
                         }
                         if (celebrate) {
-                            [self StopTimer];
+                            [self stopTimer];
+                            [self playSound:@"victory"];
+                            [self calcScore];
                             printf("celebrating>>>>>>>>");
                             _celebrateView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"celebrate.png"]];
                             
@@ -244,14 +261,15 @@ int timeInSeconds = 0;
 }
 
 -(int) calcScore{
-    int finalScore = score;
-    int timeBonus =  0;
+//    int finalScore = score;
+//    int timeBonus =  0;
+    NSLog(@"%s",[[NSString stringWithFormat:@"%d",timeInSeconds] UTF8String]);
     for (int i = 1; i<=timeInSeconds; i++) {
         score += 100/i;
         _scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     }
-    finalScore+= timeBonus;
-    return finalScore;
+    //finalScore+= timeBonus;
+    return score;
 }
 -(void) addAnimationToButton:(UIButton*) button{
     UIImageView* animationView = [button imageView];

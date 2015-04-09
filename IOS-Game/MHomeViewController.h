@@ -22,5 +22,6 @@
 // facebook share button
 @property (nonatomic, strong) IBOutlet UIButton *btn_facebookShare;
 
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end

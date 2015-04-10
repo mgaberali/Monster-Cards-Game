@@ -46,9 +46,6 @@
 		D1A11FA81AD5EB6F00D67DEF /* celebrate.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A11FA71AD5EB6F00D67DEF /* celebrate.png */; };
 		D1A2792F1AD698F20081E716 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792D1AD698F20081E716 /* img1.png */; };
 		D1A279301AD698F20081E716 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792E1AD698F20081E716 /* img2.png */; };
-		D1A2793A1AD6C32B0081E716 /* soundOff.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A279371AD6C32B0081E716 /* soundOff.png */; };
-		D1A2793B1AD6C32B0081E716 /* soundOn.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A279381AD6C32B0081E716 /* soundOn.png */; };
-		D1A2793E1AD6D7620081E716 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2793D1AD6D7620081E716 /* home.png */; };
 		D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */; };
 		D1A882A91AC960C3009C435D /* MLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882A81AC960C3009C435D /* MLoginViewController.m */; };
 		D1A882AC1AC963FE009C435D /* MRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882AB1AC963FE009C435D /* MRegisterViewController.m */; };
@@ -135,9 +132,6 @@
 		D1A11FA71AD5EB6F00D67DEF /* celebrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celebrate.png; sourceTree = "<group>"; };
 		D1A2792D1AD698F20081E716 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 		D1A2792E1AD698F20081E716 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
-		D1A279371AD6C32B0081E716 /* soundOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundOff.png; sourceTree = "<group>"; };
-		D1A279381AD6C32B0081E716 /* soundOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundOn.png; sourceTree = "<group>"; };
-		D1A2793D1AD6D7620081E716 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		D1A4E43C1AC871C50016389F /* MSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSplashScreenViewController.h; sourceTree = "<group>"; };
 		D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSplashScreenViewController.m; sourceTree = "<group>"; };
 		D1A882A71AC960C3009C435D /* MLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLoginViewController.h; sourceTree = "<group>"; };
@@ -237,6 +231,49 @@
 				D1961A041AD1DDC1007D2FDB /* flip.wav */,
 			);
 			name = sounds;
+			sourceTree = "<group>";
+		};
+		D19959A81AD8117C0026189C /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D19959A91AD811950026189C /* splash-1.png */,
+				D19959AA1AD811950026189C /* splash-2.png */,
+				D19959AB1AD811950026189C /* splash-3.png */,
+				D19959AC1AD811950026189C /* splash-4.png */,
+				D19959AD1AD811950026189C /* splash-5.png */,
+				D19959AE1AD811950026189C /* splash-6.png */,
+				D19959AF1AD811950026189C /* splash-7.png */,
+				D19959B01AD811950026189C /* splash-8.png */,
+				D19959B11AD811950026189C /* splash-9.png */,
+				D19959B21AD811950026189C /* splash-10.png */,
+				D19959B31AD811950026189C /* splash-11.png */,
+				D19959B41AD811950026189C /* splash-12.png */,
+				D19959B51AD811950026189C /* splash-13.png */,
+				D19959B61AD811950026189C /* splash-14.png */,
+				D19959B71AD811950026189C /* splash-15.png */,
+				D19959B81AD811950026189C /* splash-16.png */,
+				D19959B91AD811950026189C /* splash-17.png */,
+				D19959BA1AD811950026189C /* splash-18.png */,
+				D19959BB1AD811950026189C /* splash-19.png */,
+				D19959BC1AD811950026189C /* splash-20.png */,
+				D19959BD1AD811950026189C /* splash-21.png */,
+				D19959BE1AD811950026189C /* splash-22.png */,
+				D19959BF1AD811950026189C /* splash-23.png */,
+				D19959C01AD811950026189C /* splash-24.png */,
+				D19959C11AD811950026189C /* splash-25.png */,
+				D19959C21AD811950026189C /* splash-26.png */,
+				D19959C31AD811950026189C /* splash-27.png */,
+				D19959C41AD811950026189C /* splash-28.png */,
+				D19959C51AD811950026189C /* splash-29.png */,
+				D19959C61AD811950026189C /* splash-30.png */,
+				D19959C71AD811950026189C /* splash-31.png */,
+				D19959C81AD811950026189C /* splash-32.png */,
+				D19959C91AD811950026189C /* splash-33.png */,
+				D19959CA1AD811950026189C /* splash-34.png */,
+				D19959CB1AD811950026189C /* splash-35.png */,
+				D19959CC1AD811950026189C /* splash-36.png */,
+			);
+			name = "Splash Screen";
 			sourceTree = "<group>";
 		};
 		D1A4E43B1AC871740016389F /* ViewControllers */ = {
@@ -461,53 +498,87 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1A2793B1AD6C32B0081E716 /* soundOn.png in Resources */,
 				D19AA4EA1AD1E89B008E67EE /* btn_facebook.png in Resources */,
+				D19959F51AD81DDB0026189C /* soundOff.png in Resources */,
 				D1961A061AD1DDC1007D2FDB /* sound2.wav in Resources */,
 				D1964AC61AD594A00094DF5A /* ballonPopping.wav in Resources */,
 				D1964AC71AD594A00094DF5A /* soundflip.wav in Resources */,
+				D19959F61AD81DDB0026189C /* soundOn.png in Resources */,
 				D1F5F9451AD142B600455DFF /* big.jpg in Resources */,
-				D1A2793A1AD6C32B0081E716 /* soundOff.png in Resources */,
+				D19959DA1AD811950026189C /* splash-14.png in Resources */,
 				D1961A071AD1DDC1007D2FDB /* sound3.wav in Resources */,
+				D19959D31AD811950026189C /* splash-7.png in Resources */,
 				D1F5F9441AD142B600455DFF /* bg.png in Resources */,
 				D194EC5F1AD40ACB00DAE40A /* mared.png in Resources */,
 				D1F5F94C1AD142B600455DFF /* WinnersPList.plist in Resources */,
+				D19959CF1AD811950026189C /* splash-3.png in Resources */,
+				D19959E61AD811950026189C /* splash-26.png in Resources */,
 				D19AA4E91AD1E89B008E67EE /* btn_facebook_share.png in Resources */,
+				D19959DE1AD811950026189C /* splash-18.png in Resources */,
+				D19959EC1AD811950026189C /* splash-32.png in Resources */,
 				D1F5F9461AD142B600455DFF /* default.jpg in Resources */,
 				D1A2792F1AD698F20081E716 /* img1.png in Resources */,
 				D19AA4EF1AD1E89B008E67EE /* btn_signup.png in Resources */,
 				D19AA4F51AD1EBE4008E67EE /* img2.png in Resources */,
 				D19AA4F41AD1EBE4008E67EE /* img1.png in Resources */,
 				D19AA4F91AD1F57A008E67EE /* btn_save.png in Resources */,
+				D19959DC1AD811950026189C /* splash-16.png in Resources */,
 				D1A11FA81AD5EB6F00D67DEF /* celebrate.png in Resources */,
+				D19959D71AD811950026189C /* splash-11.png in Resources */,
 				D194EC611AD40ACB00DAE40A /* roz.jpg in Resources */,
 				D1961A081AD1DDC1007D2FDB /* flip.wav in Resources */,
 				D19A90CB1AD7F455001445BF /* back.png in Resources */,
 				D1AAF8A51AC719CD00E42A2D /* Images.xcassets in Resources */,
 				D1A279301AD698F20081E716 /* img2.png in Resources */,
 				D1AAF8971AC719CD00E42A2D /* InfoPlist.strings in Resources */,
+				D19959E41AD811950026189C /* splash-24.png in Resources */,
+				D19959E21AD811950026189C /* splash-22.png in Resources */,
+				D19959E91AD811950026189C /* splash-29.png in Resources */,
 				D1F5F94B1AD142B600455DFF /* img.jpg in Resources */,
+				D19959D11AD811950026189C /* splash-5.png in Resources */,
+				D19959F41AD81DDB0026189C /* home.png in Resources */,
 				D194EC5D1AD40ACB00DAE40A /* andl.jpg in Resources */,
 				D19A90401AD7EC9B001445BF /* user.png in Resources */,
 				D19683821AD56AA8006A8D3D /* question.png in Resources */,
+				D19959CE1AD811950026189C /* splash-2.png in Resources */,
+				D19959DD1AD811950026189C /* splash-17.png in Resources */,
+				D19959E01AD811950026189C /* splash-20.png in Resources */,
+				D19959D41AD811950026189C /* splash-8.png in Resources */,
 				D1964ACA1AD594A00094DF5A /* victory.wav in Resources */,
+				D19959F01AD811950026189C /* splash-36.png in Resources */,
 				D19AA4EC1AD1E89B008E67EE /* btn_play.png in Resources */,
+				D19959EA1AD811950026189C /* splash-30.png in Resources */,
+				D19959DB1AD811950026189C /* splash-15.png in Resources */,
 				D19AA4E81AD1E89B008E67EE /* bg_app.png in Resources */,
 				D1F5F9481AD142B600455DFF /* highlightedBG.png in Resources */,
+				D19959DF1AD811950026189C /* splash-19.png in Resources */,
+				D19959D01AD811950026189C /* splash-4.png in Resources */,
 				D1F5F9471AD142B600455DFF /* hala.jpg in Resources */,
+				D19959E81AD811950026189C /* splash-28.png in Resources */,
 				D19AA4ED1AD1E89B008E67EE /* btn_settings.png in Resources */,
+				D19959D61AD811950026189C /* splash-10.png in Resources */,
 				D19AA4F11AD1E89B008E67EE /* txtf_default.png in Resources */,
 				D19AA4EB1AD1E89B008E67EE /* btn_leaderboard.png in Resources */,
 				D19AA4EE1AD1E89B008E67EE /* btn_signin.png in Resources */,
 				D19AA4F81AD1F57A008E67EE /* btn_register.png in Resources */,
+				D19959ED1AD811950026189C /* splash-33.png in Resources */,
+				D19959CD1AD811950026189C /* splash-1.png in Resources */,
 				D1AAF8A01AC719CD00E42A2D /* Main.storyboard in Resources */,
 				D19A90CF1AD809D3001445BF /* exit.png in Resources */,
 				D19A90CD1AD80970001445BF /* exitRed.png in Resources */,
 				D1964AC91AD594A00094DF5A /* shotGun.wav in Resources */,
+				D19959EF1AD811950026189C /* splash-35.png in Resources */,
 				D194EC5E1AD40ACB00DAE40A /* boo.jpg in Resources */,
 				D194EC621AD40ACB00DAE40A /* sali.jpg in Resources */,
-				D1A2793E1AD6D7620081E716 /* home.png in Resources */,
+				D19959E11AD811950026189C /* splash-21.png in Resources */,
+				D19959D91AD811950026189C /* splash-13.png in Resources */,
+				D19959EE1AD811950026189C /* splash-34.png in Resources */,
 				D1961A051AD1DDC1007D2FDB /* sound1.wav in Resources */,
+				D19959D81AD811950026189C /* splash-12.png in Resources */,
+				D19959E71AD811950026189C /* splash-27.png in Resources */,
+				D19959EB1AD811950026189C /* splash-31.png in Resources */,
+				D19959D21AD811950026189C /* splash-6.png in Resources */,
+				D19959D51AD811950026189C /* splash-9.png in Resources */,
 				D1F5F9431AD142B600455DFF /* ahmed.jpg in Resources */,
 				D19AA4F01AD1E89B008E67EE /* cell_orange.png in Resources */,
 			);

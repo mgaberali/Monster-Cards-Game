@@ -46,7 +46,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *celebrateView;
 //@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsArray;
-
+- (IBAction)stopGame:(id)sender;
 
 - (IBAction)soundsetting:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *soundButton;

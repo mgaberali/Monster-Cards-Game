@@ -30,6 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //navigation bar style
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_app.png"] forBarMetrics:UIBarMetricsDefault];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     int score = [[defaults valueForKey:@"score"] intValue];
     _scoreLabel.text = [NSString stringWithFormat:@"Score : %d",score];

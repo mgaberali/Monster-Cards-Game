@@ -63,7 +63,8 @@ bool hostActive;
     [super viewDidLoad];
     
     [self setTitle:@"Leader Board"];
-    
+    //navigation bar style
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_app.png"] forBarMetrics:UIBarMetricsDefault];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

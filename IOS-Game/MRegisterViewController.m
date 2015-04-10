@@ -95,10 +95,48 @@
     return self;
 }
 
+/*
+-(void) back:(UIBarButtonItem *) backButton{
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
+//scale the image to fit the table view cell
+-(UIImage *) scaleImage:(UIImage *) originalImage{
+    
+    CGRect rect = CGRectMake(0,0,79,29);
+    UIGraphicsBeginImageContext( rect.size );
+    [originalImage drawInRect:rect];
+    UIImage *picture1 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData *imageData = UIImagePNGRepresentation(picture1);
+    UIImage *img=[UIImage imageWithData:imageData];
+    
+    return img;
+}
+*/
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //back button style
+    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    
+    // Add Home Button
+    //self.navigationController.navigationItem.backBarButtonItem.tintColor = [UIColor clearColor];
+//    UIImage *backImage = [self scaleImage:[UIImage imageNamed:@"back.png"]];
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:backImage style:2 target:self action:@selector(back:)];
+//    self.navigationItem.leftBarButtonItem = backButton;
+
+    //another try
+//    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    backButton.frame = CGRectMake(0, 0, 79, 29.0);
+//    [backButton setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    [self.navigationItem.leftBarButtonItem setTarget:self];
+    
+    
     UIView *paddingViewLeft3 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
     txtf_name.leftView = paddingViewLeft3;
     txtf_name.leftViewMode = UITextFieldViewModeAlways;

@@ -109,6 +109,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    //navigation bar style
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_app.png"] forBarMetrics:UIBarMetricsDefault];
+    
 	// Do any additional setup after loading the view.
     UIView *paddingViewLeft = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
     txtf_email.leftView = paddingViewLeft;

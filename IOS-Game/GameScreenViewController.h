@@ -48,7 +48,11 @@
 //@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsArray;
 
 
+- (IBAction)soundsetting:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *soundButton;
 
+
+- (IBAction)stopGame:(id)sender;
 
 
 

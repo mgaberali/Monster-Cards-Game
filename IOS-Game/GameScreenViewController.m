@@ -162,9 +162,9 @@ int timeInSeconds = 0;
     //printf("sound on");
     if (soundOn) {
         //UIButton* button = (UIButton *) sender;
-        [_soundButton setBackgroundImage:[UIImage imageNamed:@"soundOn.png"] forState:UIControlStateNormal];
+        [_soundButton setBackgroundImage:[UIImage imageNamed:@"soundOff.png"] forState:UIControlStateNormal];
     } else {
-        [_soundButton setBackgroundImage:[UIImage imageNamed:@"soundOff.png"]forState:UIControlStateNormal];
+        [_soundButton setBackgroundImage:[UIImage imageNamed:@"soundOn.png"]forState:UIControlStateNormal];
     }
 }
 

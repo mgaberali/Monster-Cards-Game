@@ -41,12 +41,12 @@ NSMutableArray* names;
     filePath = @"/Users/participant/Desktop/IOS-GAME-GIT/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
     
-    [self addWinnersToPlist];
+    //[self addWinnersToPlist];
     [self getWinnersFromPlist];
 
 }
 
-
+/*
 -(void) addWinnersToPlist{
     
     
@@ -86,6 +86,7 @@ NSMutableArray* names;
     [winners writeToFile:fullPath atomically:YES];
     printf("%s ", "Your data has been saved.");
 }
+ */
 
 -(void) getWinnersFromPlist{
     
@@ -148,9 +149,13 @@ NSMutableArray* names;
     cell.imageView.layer.masksToBounds = YES;
     cell.imageView.layer.cornerRadius = 40.0;
     
+    //curent user email
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *me = [defaults valueForKey:@"email"];
+
     //cell background image
-    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
-        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"highlightedBG.png"]];
+    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:me]) {
+        cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_app.png"]];
     } else {
         cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_app.png"]];
     }
@@ -222,9 +227,13 @@ NSMutableArray* names;
 
 //change the style of the cell of the player
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:@"hal@gmail"]) {
+    //curent user email
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *me = [defaults valueForKey:@"email"];
+
+    if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:me]) {
         cell.textLabel.text = @"Me";
-        cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"highlightedBG.png"]];
+        cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_app.png"]];
     }
 }
 

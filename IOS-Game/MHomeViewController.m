@@ -21,7 +21,7 @@ NSString *filePath;
 
 NSString* response;
 
-NSMutableArray* names;
+NSMutableArray* winners;
 
 //connection
 Reachability *internetReachableFoo;
@@ -42,6 +42,7 @@ bool hostActive;
 
 -(void) viewWillAppear:(BOOL)animated
 {
+    response = [[NSMutableString alloc] initWithString:@""];
     //self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_app.png"]];
     //self.tableView.backgroundColor = [UIColor clearColor];
     
@@ -89,32 +90,37 @@ bool hostActive;
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     response = [response stringByAppendingString:dataString];
+     printf("response %s\n", [response UTF8String]);
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    printf("%s\n", [response UTF8String]);
+    printf("response %s\n", [response UTF8String]);
     
     NSData* data = [response dataUsingEncoding:NSUTF8StringEncoding];
+    //printf(@"%@", [data]);
     NSArray* dictionaries = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     
-    names = [NSMutableArray new];
+    winners = [NSMutableArray new];
     
     for (NSDictionary* dictionary in dictionaries) {
         NSString* name = [dictionary objectForKey:@"name"];
-        [names addObject:name];
+        NSString* email = [dictionary objectForKey:@"email"];
+        int score = [[dictionary objectForKey:@"score"] intValue];
+        NSString *imageName = [dictionary objectForKey:@"imageName"];
+        HWinner *winner = [[HWinner alloc] initWithName:name email:email score:[NSNumber numberWithInt:score] winnerImage:imageName];
+        //archive the winners objects to be added to the list
+        NSData *winnerData = [NSKeyedArchiver archivedDataWithRootObject:winner];
+        [winners addObject:winnerData];
+        [winners writeToFile:fullPath atomically:YES];
     }
     
     printf("----------------------------\n");
     printf("Names:\n");
-    for (NSString* name in names) {
-        printf("Name: %s\n", [name UTF8String]);
-    }
-    
     //[self.tableView reloadData];
-    [self addWinnersToPlist];
+    //[self addWinnersToPlist];
 
 }
-
+/*
 -(void) addWinnersToPlist{
    
     //add the winners to the plist
@@ -151,7 +157,7 @@ bool hostActive;
     [winners writeToFile:fullPath atomically:YES];
     printf("%s ", "Your data has been saved.");
 }
-
+*/
 
 // Checks if we have an internet connection or not
 - (void)testInternetConnection
@@ -236,7 +242,7 @@ bool hostActive;
     if (self.hostActive) {
         //[self addWinnersToPlist];
         printf("Getting top users\n");
-        NSURL *url=[[NSURL alloc]initWithString:@"http://10.145.10.245:8080/IOS-Game-Server/TopTen"];
+        NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.4:8083/IOS-Game-Server/TopTen"];
         NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
         NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
         [connection start];

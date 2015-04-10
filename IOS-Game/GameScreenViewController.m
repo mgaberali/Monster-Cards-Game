@@ -180,7 +180,7 @@ int timeInSeconds = 0;
 -(IBAction)pressImg:(id)sender{
     
     if ( (firstCard == nil || secondCard == nil) && (sender != firstCard && sender != secondCard)) {
-        [self playSound:@"flip"];
+        [self playSound:@"sound1"];
         if(flipped==NO){
             flipped = YES;
             firstCard=(UIButton *)sender;
@@ -219,6 +219,7 @@ int timeInSeconds = 0;
                         firstCard = secondCard = nil;
                         
                     } else{
+                        [self playSound:@"goodLuck"];
                         [firstCard setEnabled:NO];
                         [secondCard setEnabled:NO];
                         

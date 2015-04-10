@@ -7,6 +7,7 @@
 //
 
 #import "MLoginViewController.h"
+#import "MHomeViewController.h"
 
 @interface MLoginViewController ()
 
@@ -43,7 +44,7 @@
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         
-        [request setURL:[NSURL URLWithString:@"http://10.145.10.245:8080/IOS-Game-Server/LoginServlet"]];
+        [request setURL:[NSURL URLWithString:@"http://192.168.1.4:8083/IOS-Game-Server/LoginServlet"]];
         
         [request setHTTPMethod:@"POST"];
         
@@ -90,7 +91,16 @@
     
     
     printf("%s" , [result UTF8String]);
+    if ([result isEqualToString:@"yes\r\n"]) {
+        //write user data to user defaults
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:[txtf_email text] forKey:@"email"];
+        [defaults setValue:0 forKey:@"score"];
+        MHomeViewController *homeScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+        [self presentViewController:homeScreen animated:YES completion:nil];
+    }
 }
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];

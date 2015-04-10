@@ -99,6 +99,26 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UIView *paddingViewLeft3 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
+    txtf_name.leftView = paddingViewLeft3;
+    txtf_name.leftViewMode = UITextFieldViewModeAlways;
+    UIView *paddingViewRight3 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 10, 20)];
+    txtf_name.rightView = paddingViewRight3;
+    txtf_name.rightViewMode = UITextFieldViewModeAlways;
+    
+    UIView *paddingViewLeft = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
+    txtf_email.leftView = paddingViewLeft;
+    txtf_email.leftViewMode = UITextFieldViewModeAlways;
+    UIView *paddingViewRight = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 10, 20)];
+    txtf_email.rightView = paddingViewRight;
+    txtf_email.rightViewMode = UITextFieldViewModeAlways;
+    
+    UIView *paddingViewLeft2 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
+    txtf_password.leftView = paddingViewLeft2;
+    txtf_password.leftViewMode = UITextFieldViewModeAlways;
+    UIView *paddingViewRight2 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 10, 20)];
+    txtf_password.rightView = paddingViewRight2;
+    txtf_password.rightViewMode = UITextFieldViewModeAlways;
 }
 
 - (void)didReceiveMemoryWarning

@@ -30,6 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int score = [[defaults valueForKey:@"score"] intValue];
+    _scoreLabel.text = [NSString stringWithFormat:@"Score : %d",score];
 	// Do any additional setup after loading the view.
 }
 

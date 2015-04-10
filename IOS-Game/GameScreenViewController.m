@@ -159,7 +159,7 @@ int timeInSeconds = 0;
 
 - (IBAction)soundsetting:(id)sender {
     soundOn = !soundOn;
-    printf("sound on");
+    //printf("sound on");
     if (soundOn) {
         //UIButton* button = (UIButton *) sender;
         [_soundButton setBackgroundImage:[UIImage imageNamed:@"soundOn.png"] forState:UIControlStateNormal];
@@ -172,7 +172,7 @@ int timeInSeconds = 0;
     [self stopTimer];
     MHomeViewController *home = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
     [self presentViewController:home animated:YES completion:^(void){
-        home.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",score];
+        //home.scoreLabel.text = [NSString stringWithFormat:@"Score : %d",score];
     }];
     
 }
@@ -269,6 +269,10 @@ int timeInSeconds = 0;
         _scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     }
     //finalScore+= timeBonus;
+    
+    //write score to user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:score forKey:@"score"];
     return score;
 }
 -(void) addAnimationToButton:(UIButton*) button{

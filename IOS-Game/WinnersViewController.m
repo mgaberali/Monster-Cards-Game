@@ -203,7 +203,9 @@ NSMutableArray* names;
 
 //scale the image to fit the table view cell
 -(UIImage *) scaleImage:(UIImage *) originalImage{
-    
+    if(originalImage == nil){
+        originalImage = [UIImage imageNamed:@"user.png"];
+    }
     CGRect rect = CGRectMake(0,0,75,75);
     UIGraphicsBeginImageContext( rect.size );
     [originalImage drawInRect:rect];

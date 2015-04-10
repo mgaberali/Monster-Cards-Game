@@ -133,6 +133,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="leaderBoardButton:" destination="RBI-zp-oef" eventType="touchUpInside" id="9ci-nX-Hrz"/>
                                     <segue destination="qGe-8L-ATh" kind="modal" modalTransitionStyle="flipHorizontal" id="z2w-ji-2EX"/>
                                 </connections>
                             </button>
@@ -193,25 +194,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" background="txtf_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="8jo-Sd-s9W">
-                                <rect key="frame" x="53" y="299" width="212" height="47"/>
+                                <rect key="frame" x="53" y="208" width="212" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7MS-iL-jOW">
-                                <rect key="frame" x="114" y="130" width="93" height="98"/>
+                                <rect key="frame" x="114" y="93" width="93" height="98"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7o-mP-uC2">
-                                <rect key="frame" x="54" y="378" width="210" height="69"/>
+                                <rect key="frame" x="54" y="268" width="210" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn_save.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xN-dU-1Kh">
-                                <rect key="frame" x="20" y="20" width="75" height="45"/>
+                                <rect key="frame" x="20" y="41" width="75" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,7 +270,7 @@
                                 <color key="shadowColor" red="0.098039224743843079" green="0.074509806931018829" blue="0.37647062540054321" alpha="1" colorSpace="deviceRGB"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="adg-rY-A51">
-                                <rect key="frame" x="0.0" y="86" width="320" height="482"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="406"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>

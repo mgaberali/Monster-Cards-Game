@@ -25,6 +25,8 @@
 // profile image imageview
 @property (nonatomic, strong) IBOutlet UIImageView *imgv_profileImage;
 
+// on image profile pressed
+- (IBAction)onImagePressed:(id)sender;
 
 // signup button pressed method
 - (IBAction)signupButtonPressed:(id)sender;

@@ -12,7 +12,11 @@
 
 @end
 
-@implementation MRegisterViewController
+@implementation MRegisterViewController{
+    
+    UIImage *profileImg;
+    
+}
 
 // synthesize elements
 @synthesize txtf_password, txtf_name, txtf_email, btn_signup, imgv_profileImage;
@@ -26,7 +30,10 @@
     NSString *userName =[txtf_name text];
     NSString *password= [txtf_password text];
     NSString *userEmail= [txtf_email text];
-    NSString *userImage= @"aaa";
+    
+    // Encode the Image with Base64
+    NSData *imageData = UIImagePNGRepresentation(profileImg);
+    NSString *userImage = [imageData base64EncodedStringWithOptions:0];
     
     // POST
     
@@ -44,7 +51,7 @@
     
     //you must change IP to your IP if you will connect on DB
     
-    [request setURL:[NSURL URLWithString:@"http://10.145.10.245:8080/IOS-Game-Server/SignupServlet"]];
+    [request setURL:[NSURL URLWithString:@"http://192.168.74.1:8084/IOS-Game-Server/SignupServlet"]];
     
     [request setHTTPMethod:@"POST"];
     
@@ -163,6 +170,31 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onImagePressed:(id)sender {
+    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentModalViewController:imagePickerController animated:YES];
+    
+   
+    
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary *)editingInfo
+{
+    
+    
+    [picker dismissModalViewControllerAnimated:YES];
+    [imgv_profileImage setImage:image];
+    profileImg = image;
+    
 }
 
 @end

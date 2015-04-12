@@ -36,14 +36,16 @@
    
     if([self validateInputs]){
     
-        // make request parameters string
-        NSString *parameter = [NSString stringWithFormat:@"mail=%@&password=%@",mail,password];
+        // prepare request parameters
+        NSMutableDictionary *parameters = [NSMutableDictionary new];
+        [parameters setObject:mail forKey:@"email"];
+        [parameters setObject:password forKey:@"password"];
     
         // make servlet uri
         NSString *uri = @"IOS-Game-Server/LoginServlet";
 
         // make http request
-        [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameterString:parameter delegate:self];
+        [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameters:parameters delegate:self];
     
         
     }
@@ -86,6 +88,7 @@
         [userDefaults setObject:password forKey:@"password"];
         [userDefaults setObject:[responseData objectForKey:@"score"] forKey:@"score"];
         [userDefaults setObject:[responseData objectForKey:@"image"] forKey:@"image"];
+        [userDefaults setObject:@"YES" forKey:@"status"];
         
         // go to home screen
         UIPageViewController *homeView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];

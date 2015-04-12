@@ -13,7 +13,7 @@
 /*
  * share score on facebook
  */
-+ (void) sharePostOnFB: (NSString *) postString withImage: (UIImage*) image fromViewCotroller: (UIViewController *) viewController{
++ (void) sharePostOnFB: (NSString *) postString withLink: (NSString *) url withImage: (UIImage*) image fromViewCotroller: (UIViewController *) viewController{
     
     SLComposeViewController *controller = [SLComposeViewController
                                            composeViewControllerForServiceType:SLServiceTypeFacebook];
@@ -29,10 +29,12 @@
         }
         [controller dismissViewControllerAnimated:YES completion:nil];
     };
-    controller.completionHandler =myBlock;
+    controller.completionHandler = myBlock;
     //Adding the Text to the facebook post value from iOS
     [controller setInitialText:postString];
     //Adding the URL to the facebook post value from iOS
+    [controller addURL:[NSURL URLWithString:url]];
+    // Adding image to facebook post
     [controller addImage:image];
     //Adding the Text to the facebook post value from iOS
     [viewController presentViewController:controller animated:YES completion:nil];

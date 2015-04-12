@@ -14,15 +14,9 @@
 // you can define your server ip here
 static NSString *SERVERIP = @"http://192.168.74.1:8084/";
 
-+(void)makeHttpRequestForUri:(NSString *)uri withMethod:(NSString *)method withParameterString:(NSString *)parameter delegate:(id)delegate{
++(void)makeHttpRequestForUri:(NSString *)uri withMethod:(NSString *)method withParameters:(NSMutableDictionary *)parameters delegate:(id)delegate{
     
-    
-    // encode parameter data
-    NSData *parameterData = [parameter dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    // get parameters length
-    NSString *postLength = [NSString stringWithFormat:@"%d" , [parameterData length]];
-    
+
     // create request
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
@@ -33,14 +27,15 @@ static NSString *SERVERIP = @"http://192.168.74.1:8084/";
     // set request methods to post
     [request setHTTPMethod:method];
     
-    // set request content length
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    //transform the dictionary key-value pair into NSData object
+    NSData *JSONData = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONReadingMutableContainers error:nil];
+
     
     // set paramters to http body
-    [request setHTTPBody:parameterData];
+    [request setHTTPBody:JSONData];
     
     // set request content type
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     // create connection for the url
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:delegate];

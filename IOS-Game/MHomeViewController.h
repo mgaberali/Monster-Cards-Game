@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSocialShareUtility.h"
 @class Reachability;
 
 @interface MHomeViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
@@ -14,6 +15,11 @@
     Reachability* internetReachable;
     Reachability* hostReachable;
 }
+
+- (IBAction)onShareBtnPressed:(id)sender;
+
+// login button
+@property (strong, nonatomic) IBOutlet UIButton *btn_login;
 
 // profile button
 @property (nonatomic, strong) IBOutlet UIButton *btn_profile;
@@ -30,7 +36,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 - (IBAction)leaderBoardButton:(id)sender;
-
 
 
 @property bool internetActive;

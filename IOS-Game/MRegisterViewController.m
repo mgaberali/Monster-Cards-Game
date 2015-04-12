@@ -40,15 +40,18 @@
          NSData *imageData = UIImagePNGRepresentation(profileImg);
          NSString *userImage = [imageData base64EncodedStringWithOptions:0];
     
-         // make parameter string
-         NSString *parameter = [NSString stringWithFormat:@"name=%@&password=%@&email=%@&userImage=%@",userName,password,userEmail,userImage];
-    
+         // prepare request parameters
+         NSMutableDictionary *parameters = [NSMutableDictionary new];
+         [parameters setObject:userName forKey:@"name"];
+         [parameters setObject:userEmail forKey:@"email"];
+         [parameters setObject:password forKey:@"password"];
+         [parameters setObject:userImage forKey:@"image"];
     
          // make servlet uri
          NSString *uri = @"IOS-Game-Server/SignupServlet";
     
          // make http request
-         [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameterString:parameter delegate:self];
+         [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameters:parameters delegate:self];
      }
 }
 
@@ -199,8 +202,6 @@
     imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentModalViewController:imagePickerController animated:YES];
-    
-   
     
     
 }

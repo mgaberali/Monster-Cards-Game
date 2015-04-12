@@ -28,7 +28,7 @@ Reachability *internetReachableFoo;
 bool hostActive;
 
 // synthesize elements
-@synthesize btn_facebookShare, btn_leaderBoard, btn_play, btn_profile;
+@synthesize btn_facebookShare, btn_leaderBoard, btn_play, btn_profile, btn_login;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -65,10 +65,27 @@ bool hostActive;
     //navigation bar style
     //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_app.png"] forBarMetrics:UIBarMetricsDefault];
     
+    // get data from user defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    int score = [[defaults valueForKey:@"score"] intValue];
-    _scoreLabel.text = [NSString stringWithFormat:@"Score : %d",score];
-	// Do any additional setup after loading the view.
+    NSString *score = [defaults objectForKey:@"score"];
+    NSString *status = [defaults objectForKey:@"status"];
+    _scoreLabel.text = [NSString stringWithFormat:@"Score : %@",score];
+	
+    if( status == nil || [status isEqualToString:@"NO"]){
+        
+        [btn_profile setEnabled:NO];
+        [btn_leaderBoard setEnabled:NO];
+        [btn_facebookShare setHidden:YES];
+        [btn_login setHidden:NO];
+        
+    }else if([status isEqualToString:@"YES"]){
+        
+        [btn_profile setEnabled:YES];
+        [btn_leaderBoard setEnabled:YES];
+        [btn_facebookShare setHidden:NO];
+        [btn_login setHidden:YES];
+        
+    }
     
     
     //initiating plist file path
@@ -249,4 +266,25 @@ bool hostActive;
     }
 }
 
+- (IBAction)onShareBtnPressed:(id)sender {
+    
+    // get user data from user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *score = [defaults objectForKey:@"score"];
+    NSString *name = [defaults objectForKey:@"name"];
+
+    // link of our application
+    NSString *appUrl = @"www.play.google.com";
+    
+    // App image
+    UIImage *image = [UIImage imageNamed:@"mared.png"];
+    
+    // make post string
+    NSString *postString = [name stringByAppendingString:@" got new score of "];
+    postString = [postString stringByAppendingString:score];
+    postString = [postString stringByAppendingString:@"\n"];
+    
+    [MSocialShareUtility sharePostOnFB:postString withLink:appUrl withImage:image fromViewCotroller:self];
+    
+}
 @end

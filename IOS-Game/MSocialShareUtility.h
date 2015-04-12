@@ -12,6 +12,6 @@
 
 @interface MSocialShareUtility : NSObject
 
-+ (void) sharePostOnFB: (NSString *) postString withImage: (UIImage*) image fromViewCotroller: (UIViewController *) viewController;
++ (void) sharePostOnFB: (NSString *) postString withLink: (NSString *) url withImage: (UIImage*) image fromViewCotroller: (UIViewController *) viewController;
 
 @end

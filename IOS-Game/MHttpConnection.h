@@ -15,6 +15,6 @@
     
 }
 
-+ (void) makeHttpRequestForUri: (NSString *) uri withMethod: (NSString *) method withParameterString: (NSString *) parameter delegate: (id) delegate;
++ (void)makeHttpRequestForUri:(NSString *)uri withMethod:(NSString *)method withParameters:(NSMutableDictionary *)parameters delegate:(id)delegate;
 
 @end

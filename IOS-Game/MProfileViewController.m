@@ -14,6 +14,7 @@
 
 @implementation MProfileViewController
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,9 +31,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // get user name from user defaults
     NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
-    NSString * name=[userDefaults objectForKey:@"name"];
+    NSString *name=[userDefaults objectForKey:@"name"];
+    
+    // get user image from user defaults
+    NSString *imageString=[userDefaults objectForKey:@"image"];
+    NSData *imageData = [[NSData alloc] initWithBase64EncodedString:imageString options:0];
+    UIImage *image = [UIImage imageWithData:imageData];
+    
+    // set name and image
     [_txtf_name setText:name];
+    [_imgv_profileImage setImage:image];
+    
 	// Do any additional setup after loading the view.
 }
 
@@ -44,7 +56,6 @@
 
 - (IBAction)saveButtonPressed:(id)sender{
     
-    printf("signupButtonPressed\n");
     
     NSString *userName =_txtf_name.text;
     
@@ -53,10 +64,6 @@
     NSString *userEmail= @"fromios";
     NSString *userImage= @"aaa";
     
-    // POST
-    
-    
-    printf("%s",[userName UTF8String]);
     
     NSString *parameter = [NSString stringWithFormat:@"name=%@&password=%@&email=%@&userImage=%@",userName,password,userEmail,userImage];
     

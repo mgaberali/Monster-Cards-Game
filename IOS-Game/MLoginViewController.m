@@ -7,100 +7,104 @@
 //
 
 #import "MLoginViewController.h"
-#import "MHomeViewController.h"
 
 @interface MLoginViewController ()
 
 @end
 
-@implementation MLoginViewController
+@implementation MLoginViewController{
+    
+    NSString *mail;
+    NSString *password;
+    
+}
 
 // synthesize elements
-@synthesize txtf_email, txtf_password, btn_register, btn_sigin;
+@synthesize txtf_email, txtf_password, btn_register, btn_sigin ,response;
 
 
 // signin button pressed method implementation
 - (IBAction)signinButtonPressed:(id)sender{
     
-    ////////hey///////
+    // init response
+    response = @"";
     
-    printf("signinButtonPressed");
+    // get email and password from text fields
+    mail =[txtf_email text];
+    password=[txtf_password text];
     
-    NSString * mail=[txtf_email text];
+   
+    if([self validateInputs]){
     
-    NSString * password=[txtf_password text];
-    
-    BOOL mailNotEmpty = mail != nil && ![mail isEqualToString:@""];
-    BOOL passwordNotEmpty = password != nil && ![password isEqualToString:@""];
-    
-    if (mailNotEmpty && passwordNotEmpty) {
-        
+        // make request parameters string
         NSString *parameter = [NSString stringWithFormat:@"mail=%@&password=%@",mail,password];
-        
-        
-        NSData *parameterData = [parameter dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-        
-        NSString *postLength = [NSString stringWithFormat:@"%d" , [parameterData length]];
-        
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        
-        [request setURL:[NSURL URLWithString:@"http://192.168.1.4:8083/IOS-Game-Server/LoginServlet"]];
-        
-        [request setHTTPMethod:@"POST"];
-        
-        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-        
-        [request setHTTPBody:parameterData];
-        
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        
-        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        
-        
-        [connection start];
-        
-        if( connection )
-        {
-            printf("connect\n");
-            
-            //open home view
-            //identify in storyboard ->home
-            //
-            
-//            UIPageViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
-//            [self presentViewController:newView animated:YES completion:nil];
-//            [self.navigationController pushViewController:newView animated:nil];
-            
-        }else{
-            
-            printf("not connect");
-            
-            //open login view again
-            
-        }
+    
+        // make servlet uri
+        NSString *uri = @"IOS-Game-Server/LoginServlet";
+
+        // make http request
+        [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameterString:parameter delegate:self];
+    
         
     }
+ 
+}
+
+/*
+ * This method is for validation
+ */
+- (Boolean) validateInputs{
+    
+    // validate if textfields are not empty
+    
+    // validate email using regx
+    
+    
+    // must show ui alert view to user
+    
+    return YES;
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    
+    
+    NSData* data = [response dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* responseData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+
+    if([[responseData objectForKey:@"status"] isEqualToString:@"fail"]){
+        
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Signing in" message:@"Invalid Email/Password" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [dialog show];
+        
+    }else{
+        
+        // save user data in user defaults
+        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:[responseData objectForKey:@"name"] forKey:@"name"];
+        [userDefaults setObject:mail forKey:@"email"];
+        [userDefaults setObject:password forKey:@"password"];
+        [userDefaults setObject:[responseData objectForKey:@"score"] forKey:@"score"];
+        [userDefaults setObject:[responseData objectForKey:@"image"] forKey:@"image"];
+        
+        // go to home screen
+        UIPageViewController *homeView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+        
+        [self presentViewController:homeView animated:YES completion:nil];
+
+    }
+    
+    
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     
-    
-    printf("didReceiveData\n");
-    
-    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    
-    printf("%s" , [result UTF8String]);
-    if ([result isEqualToString:@"yes\r\n"]) {
-        //write user data to user defaults
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:[txtf_email text] forKey:@"email"];
-        [defaults setValue:0 forKey:@"score"];
-        MHomeViewController *homeScreen = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
-        [self presentViewController:homeScreen animated:YES completion:nil];
-    }
-}
+  
+    NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    response = [response stringByAppendingString:dataString];
 
+}
+ 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
@@ -119,24 +123,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    //navigation bar style
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_app.png"] forBarMetrics:UIBarMetricsDefault];
-    
 	// Do any additional setup after loading the view.
-    UIView *paddingViewLeft = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
-    txtf_email.leftView = paddingViewLeft;
-    txtf_email.leftViewMode = UITextFieldViewModeAlways;
-    UIView *paddingViewRight = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 10, 20)];
-    txtf_email.rightView = paddingViewRight;
-    txtf_email.rightViewMode = UITextFieldViewModeAlways;
-    
-    UIView *paddingViewLeft2 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
-    txtf_password.leftView = paddingViewLeft2;
-    txtf_password.leftViewMode = UITextFieldViewModeAlways;
-    UIView *paddingViewRight2 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 10, 20)];
-    txtf_password.rightView = paddingViewRight2;
-    txtf_password.rightViewMode = UITextFieldViewModeAlways;
 }
 
 - (void)didReceiveMemoryWarning

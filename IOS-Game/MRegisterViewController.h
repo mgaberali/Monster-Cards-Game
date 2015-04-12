@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MHttpConnection.h"
 
 @interface MRegisterViewController : UIViewController
 

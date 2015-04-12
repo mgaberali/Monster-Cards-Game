@@ -15,6 +15,7 @@
 @implementation MRegisterViewController{
     
     UIImage *profileImg;
+    NSString *response;
     
 }
 
@@ -25,67 +26,86 @@
 // signin button pressed method implementation
 - (IBAction)signupButtonPressed:(id)sender{
     
-    printf("signupButtonPressed\n");
-    
+    // init response
+    response = @"";
+   
+    // get data from textfields
     NSString *userName =[txtf_name text];
     NSString *password= [txtf_password text];
     NSString *userEmail= [txtf_email text];
     
-    // Encode the Image with Base64
-    NSData *imageData = UIImagePNGRepresentation(profileImg);
-    NSString *userImage = [imageData base64EncodedStringWithOptions:0];
+     if([self validateInputs]){
     
-    // POST
+         // Encode the Image with Base64
+         NSData *imageData = UIImagePNGRepresentation(profileImg);
+         NSString *userImage = [imageData base64EncodedStringWithOptions:0];
     
-    
-    printf("%s",[userName UTF8String]);
-    
-    NSString *parameter = [NSString stringWithFormat:@"name=%@&password=%@&email=%@&userImage=%@",userName,password,userEmail,userImage];
+         // make parameter string
+         NSString *parameter = [NSString stringWithFormat:@"name=%@&password=%@&email=%@&userImage=%@",userName,password,userEmail,userImage];
     
     
-    NSData *parameterData = [parameter dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+         // make servlet uri
+         NSString *uri = @"IOS-Game-Server/SignupServlet";
     
-    NSString *postLength = [NSString stringWithFormat:@"%d" , [parameterData length]];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    //you must change IP to your IP if you will connect on DB
-    
-    [request setURL:[NSURL URLWithString:@"http://192.168.74.1:8084/IOS-Game-Server/SignupServlet"]];
-    
-    [request setHTTPMethod:@"POST"];
-    
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    
-    [request setHTTPBody:parameterData];
-    
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    [connection start];
-    
-    if( connection )
-    {
-        printf("connect\n");
-        
-    }else{
-        
-        //serverResponse.text = NO_CONNECTION;
-        printf("not connect\n");
-        
-        
-    }
+         // make http request
+         [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameterString:parameter delegate:self];
+     }
 }
+
+/*
+ * This method is for validation
+ */
+- (Boolean) validateInputs{
+    
+    // validate if textfields are not empty
+    
+    // validate email using regx
+    
+    // validate password is not less than 8 chars
+    
+    // must show ui alert view to user
+    
+    return YES;
+}
+
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     
     
-    printf("didReceiveData\n\n\n");
-    NSString *msgFromServer = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    response = [response stringByAppendingString:dataString];
+    
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
     
-    printf("%s" , [msgFromServer UTF8String]);
+    NSData* data = [response dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* responseData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    if([[responseData objectForKey:@"status"] isEqualToString:@"fail"]){
+        
+        // show message to user
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Email already exists" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [dialog show];
+        
+    }else{
+        
+        // show message to user
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Registeration Complete" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [dialog show];
+        
+        
+        // go to home screen
+        UIPageViewController *homeView = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+        
+        [self presentViewController:homeView animated:YES completion:nil];
+        
+    }
+    
+    
 }
 
 

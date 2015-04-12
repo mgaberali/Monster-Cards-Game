@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MRegisterViewController.h"
 #import "MHomeViewController.h"
+#import "MHttpConnection.h"
 
-@interface MLoginViewController : UIViewController
+@interface MLoginViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 // email textfield
 @property (nonatomic, strong) IBOutlet UITextField *txtf_email;
@@ -23,6 +24,7 @@
 
 // register button
 @property (nonatomic, strong) IBOutlet UIButton *btn_register;
+@property NSString * response;
 
 
 // signin button pressed method

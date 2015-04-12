@@ -46,6 +46,7 @@
 		D19AA4F51AD1EBE4008E67EE /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D19AA4F31AD1EBE4008E67EE /* img2.png */; };
 		D19AA4F81AD1F57A008E67EE /* btn_register.png in Resources */ = {isa = PBXBuildFile; fileRef = D19AA4F61AD1F57A008E67EE /* btn_register.png */; };
 		D19AA4F91AD1F57A008E67EE /* btn_save.png in Resources */ = {isa = PBXBuildFile; fileRef = D19AA4F71AD1F57A008E67EE /* btn_save.png */; };
+		D19B8D841ADA792900A17D6D /* MHttpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D19B8D831ADA792900A17D6D /* MHttpConnection.m */; };
 		D19EAECD1AD8F51C00365B9E /* splash-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D19EAEA91AD8F51C00365B9E /* splash-1.png */; };
 		D19EAECE1AD8F51C00365B9E /* splash-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D19EAEAA1AD8F51C00365B9E /* splash-2.png */; };
 		D19EAECF1AD8F51C00365B9E /* splash-3.png in Resources */ = {isa = PBXBuildFile; fileRef = D19EAEAB1AD8F51C00365B9E /* splash-3.png */; };
@@ -172,6 +173,8 @@
 		D19AA4F31AD1EBE4008E67EE /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img2.png; path = "IOS-Game/img2.png"; sourceTree = "<group>"; };
 		D19AA4F61AD1F57A008E67EE /* btn_register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_register.png; sourceTree = "<group>"; };
 		D19AA4F71AD1F57A008E67EE /* btn_save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_save.png; sourceTree = "<group>"; };
+		D19B8D821ADA792900A17D6D /* MHttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHttpConnection.h; sourceTree = "<group>"; };
+		D19B8D831ADA792900A17D6D /* MHttpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHttpConnection.m; sourceTree = "<group>"; };
 		D19EAEA91AD8F51C00365B9E /* splash-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash-1.png"; path = "Splash Screen2/splash-1.png"; sourceTree = "<group>"; };
 		D19EAEAA1AD8F51C00365B9E /* splash-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash-2.png"; path = "Splash Screen2/splash-2.png"; sourceTree = "<group>"; };
 		D19EAEAB1AD8F51C00365B9E /* splash-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash-3.png"; path = "Splash Screen2/splash-3.png"; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				D1F5F93F1AD142B600455DFF /* HWinner.h */,
 				D1F5F9401AD142B600455DFF /* HWinner.m */,
 				D1F5F9421AD142B600455DFF /* WinnersPList.plist */,
+				D19B8D821ADA792900A17D6D /* MHttpConnection.h */,
+				D19B8D831ADA792900A17D6D /* MHttpConnection.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -693,6 +698,7 @@
 				D19250091ACB5D7000392035 /* GameScreenViewController.m in Sources */,
 				D1A882B21AC993D5009C435D /* MGameScreenViewController.m in Sources */,
 				D1A882B81AC9B6CC009C435D /* MLeaderBoardViewController.m in Sources */,
+				D19B8D841ADA792900A17D6D /* MHttpConnection.m in Sources */,
 				D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */,
 				D1F5F94A1AD142B600455DFF /* HWinner.m in Sources */,
 				D1A882A91AC960C3009C435D /* MLoginViewController.m in Sources */,

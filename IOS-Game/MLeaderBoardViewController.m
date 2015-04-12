@@ -81,10 +81,10 @@ bool hostActive;
     
     
     printf("Getting top users\n");
-    NSURL *url=[[NSURL alloc]initWithString:@"http://10.145.10.245:8080/IOS-Game-Server/TopTen"];
+    NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.74.1:8084/IOS-Game-Server/TopTen"];
     NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
     NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
-    //[connection start];
+    [connection start];
     
     response = @"";
     

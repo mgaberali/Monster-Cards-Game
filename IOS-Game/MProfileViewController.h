@@ -22,6 +22,7 @@
 // profile image imageview
 @property (nonatomic, strong) IBOutlet UIImageView *imgv_profileImage;
 
-
+- (IBAction)saveButtonPressed:(id)sender;
+-(IBAction)cameraPress:(id)sender;
 
 @end

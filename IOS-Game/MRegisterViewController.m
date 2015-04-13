@@ -45,6 +45,7 @@
          [parameters setObject:userName forKey:@"name"];
          [parameters setObject:userEmail forKey:@"email"];
          [parameters setObject:password forKey:@"password"];
+         [parameters setObject:[NSNumber numberWithInt:0] forKey:@"score"];
          [parameters setObject:userImage forKey:@"image"];
     
          // make servlet uri

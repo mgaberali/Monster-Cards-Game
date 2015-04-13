@@ -273,7 +273,11 @@ int timeInSeconds = 0;
     
     //write score to user defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:score forKey:@"score"];
+    int lastScore = [[defaults objectForKey:@"score"] integerValue];
+    if (lastScore < score) {
+        [defaults setObject:[NSString stringWithFormat:@"%d",score] forKey:@"score"];
+    }
+    
     return score;
 }
 -(void) addAnimationToButton:(UIButton*) button{

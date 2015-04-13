@@ -77,7 +77,7 @@ int timeInSeconds = 0;
     UIImage *img4=[UIImage imageNamed:@"boo.jpg"];
     UIImage *img5=[UIImage imageNamed:@"andl.jpg"];
     UIImage *img6=[UIImage imageNamed:@"img.jpg"];
-    UIImage *img7=[UIImage imageNamed:@"default.png"];
+    UIImage *img7=[UIImage imageNamed:@"default.jpg"];
     UIImage *img8=[UIImage imageNamed:@"hala.jpg"];
     imagesArray = [[NSArray alloc]initWithObjects:img1,img2,img3,img4,img5,img6,img7,img8,nil];
     

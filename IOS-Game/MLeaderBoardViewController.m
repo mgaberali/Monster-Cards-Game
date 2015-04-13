@@ -73,7 +73,7 @@ bool hostActive;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //initiating plist file path
-    filePath = @"/Users/participant/Desktop/IOS-GAME-GIT/IOS-Game";
+    filePath = @"/Users/participant/Desktop/IOSGameGIT/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
     
     [self addWinnersToPlist];
@@ -81,7 +81,7 @@ bool hostActive;
     
     
     printf("Getting top users\n");
-    NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.74.1:8084/IOS-Game-Server/TopTen"];
+    NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.14:8084/IOS-Game-Server/TopTen"];
     NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
     NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
     [connection start];

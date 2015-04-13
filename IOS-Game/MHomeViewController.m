@@ -69,7 +69,14 @@ bool hostActive;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *score = [defaults objectForKey:@"score"];
     NSString *status = [defaults objectForKey:@"status"];
-    _scoreLabel.text = [NSString stringWithFormat:@"Score : %@",score];
+    
+    if (score == nil) {
+        _scoreLabel.text = [NSString stringWithFormat:@"Score : 0"];
+    } else{
+        _scoreLabel.text = [NSString stringWithFormat:@"Score : %@",score];
+    }
+    
+    
 	
     if( status == nil || [status isEqualToString:@"NO"]){
         
@@ -89,7 +96,7 @@ bool hostActive;
     
     
     //initiating plist file path
-    filePath = @"/Users/participant/Desktop/IOS-GAME-GIT/IOS-Game";
+    filePath = @"/Users/participant/Desktop/IOSGameGIT/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
 
 }

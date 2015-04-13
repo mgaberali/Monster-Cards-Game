@@ -149,6 +149,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    profileImg = [UIImage imageNamed:@"user.png"];
 	// Do any additional setup after loading the view.
     //back button style
     //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];

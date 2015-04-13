@@ -27,6 +27,8 @@
 		D1964AC91AD594A00094DF5A /* shotGun.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1964AC41AD594A00094DF5A /* shotGun.wav */; };
 		D1964ACA1AD594A00094DF5A /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1964AC51AD594A00094DF5A /* victory.wav */; };
 		D19683821AD56AA8006A8D3D /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = D19683811AD56AA8006A8D3D /* question.png */; };
+		D19841531ADC690900F5C915 /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = D19841521ADC690900F5C915 /* sync.png */; };
+		D19841551ADC6C5800F5C915 /* sync-06.png in Resources */ = {isa = PBXBuildFile; fileRef = D19841541ADC6C5800F5C915 /* sync-06.png */; };
 		D19A90401AD7EC9B001445BF /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = D19A903F1AD7EC9B001445BF /* user.png */; };
 		D19A90CB1AD7F455001445BF /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D19A90CA1AD7F455001445BF /* back.png */; };
 		D19A90CD1AD80970001445BF /* exitRed.png in Resources */ = {isa = PBXBuildFile; fileRef = D19A90CC1AD80970001445BF /* exitRed.png */; };
@@ -156,6 +158,8 @@
 		D1964AC41AD594A00094DF5A /* shotGun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shotGun.wav; sourceTree = "<group>"; };
 		D1964AC51AD594A00094DF5A /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
 		D19683811AD56AA8006A8D3D /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		D19841521ADC690900F5C915 /* sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sync.png; sourceTree = "<group>"; };
+		D19841541ADC6C5800F5C915 /* sync-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sync-06.png"; sourceTree = "<group>"; };
 		D19A903F1AD7EC9B001445BF /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		D19A90CA1AD7F455001445BF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		D19A90CC1AD80970001445BF /* exitRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitRed.png; sourceTree = "<group>"; };
@@ -480,6 +484,8 @@
 				D19EAEA81AD8F4F000365B9E /* Splash Screen */,
 				D19A90D51AD8284B001445BF /* soundOff.png */,
 				D19A90D61AD8284B001445BF /* soundOn.png */,
+				D19841521ADC690900F5C915 /* sync.png */,
+				D19841541ADC6C5800F5C915 /* sync-06.png */,
 				D19A90D31AD8283F001445BF /* home.png */,
 				D19A90CE1AD809D3001445BF /* exit.png */,
 				D19A90CC1AD80970001445BF /* exitRed.png */,
@@ -618,6 +624,7 @@
 				D19EAEE61AD8F51C00365B9E /* splash-26.png in Resources */,
 				D19EAEED1AD8F51C00365B9E /* splash-33.png in Resources */,
 				D19EAEE71AD8F51C00365B9E /* splash-27.png in Resources */,
+				D19841551ADC6C5800F5C915 /* sync-06.png in Resources */,
 				D19AA4F51AD1EBE4008E67EE /* img2.png in Resources */,
 				D19EAEDC1AD8F51C00365B9E /* splash-16.png in Resources */,
 				D1B400DC1AD8672000BD9C24 /* goodLuck.wav in Resources */,
@@ -650,6 +657,7 @@
 				D19A90D41AD8283F001445BF /* home.png in Resources */,
 				D19AA4E81AD1E89B008E67EE /* bg_app.png in Resources */,
 				D1F5F9481AD142B600455DFF /* highlightedBG.png in Resources */,
+				D19841531ADC690900F5C915 /* sync.png in Resources */,
 				D1F5F9471AD142B600455DFF /* hala.jpg in Resources */,
 				D19AA4ED1AD1E89B008E67EE /* btn_settings.png in Resources */,
 				D19AA4F11AD1E89B008E67EE /* txtf_default.png in Resources */,

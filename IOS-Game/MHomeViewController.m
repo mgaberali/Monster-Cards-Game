@@ -259,7 +259,7 @@ bool hostActive;
     if (self.hostActive) {
         //[self addWinnersToPlist];
         printf("Getting top users\n");
-        NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.4:8083/IOS-Game-Server/TopTen"];
+        NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.14:8083/IOS-Game-Server/TopTen"];
         NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
         NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
         [connection start];

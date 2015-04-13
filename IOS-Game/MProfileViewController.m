@@ -50,6 +50,10 @@
     NSData *imageData = [[NSData alloc] initWithBase64EncodedString:imageString options:0];
     UIImage *image = [UIImage imageWithData:imageData];
     
+    if (image == nil) {
+        image = [UIImage imageNamed:@"user.png"];
+    }
+    
     // set name and image
     [_txtf_name setText:name];
     [_imgv_profileImage setImage:image];

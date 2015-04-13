@@ -147,7 +147,7 @@ NSMutableArray* names;
     
     //rounded image
     cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.cornerRadius = 50.0;
+    cell.imageView.layer.cornerRadius = 35.0;
     
     //curent user email
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -240,6 +240,8 @@ NSMutableArray* names;
 
     if ([[[_winnersArray objectAtIndex:indexPath.row] email] isEqualToString:me]) {
         cell.textLabel.text = @"Me";
+        cell.textLabel.shadowColor = [UIColor whiteColor];
+        cell.textLabel.textColor = [UIColor redColor];
         cell.backgroundView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_app.png"]];
     }
 }

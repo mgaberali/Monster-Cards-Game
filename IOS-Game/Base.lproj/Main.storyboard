@@ -215,7 +215,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="7MS-iL-jOW">
-                                <rect key="frame" x="110.5" y="122" width="100" height="100"/>
+                                <rect key="frame" x="111" y="122" width="99" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -295,7 +295,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.098039224743843079" green="0.074509806931018829" blue="0.37647062540054321" alpha="1" colorSpace="deviceRGB"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="adg-rY-A51">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="adg-rY-A51">
                                 <rect key="frame" x="0.0" y="94" width="320" height="406"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -708,7 +708,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KAb-iR-kMY"/>
+        <segue reference="UXr-5C-wuI"/>
         <segue reference="L8m-JI-h0X"/>
     </inferredMetricsTieBreakers>
 </document>

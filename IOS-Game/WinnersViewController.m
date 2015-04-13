@@ -147,7 +147,7 @@ NSMutableArray* names;
     
     //rounded image
     cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.cornerRadius = 40.0;
+    cell.imageView.layer.cornerRadius = 50.0;
     
     //curent user email
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -181,12 +181,17 @@ NSMutableArray* names;
     
     // Configure the cell...
     if (_winnersArray != nil) {
-        if ([[[_winnersArray objectAtIndex:indexPath.row] winnerImage] isEqualToString:@"hal.gmail"]) {
-        }
-        NSString *imageName = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
+       
+        // get user image
+        NSString *imageString = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
+        NSData *imageData = [[NSData alloc] initWithBase64EncodedString:imageString options:0];
+        UIImage *image = [UIImage imageWithData:imageData];
+        
+        
+        //NSString *imageName = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
         NSMutableString *scoreString= [[NSMutableString alloc] initWithString:@"Score "];
         [scoreString appendString:[[[_winnersArray objectAtIndex:indexPath.row] score] stringValue]];
-        UIImage *scaledImage = [self scaleImage:[UIImage imageNamed:imageName]];
+        UIImage *scaledImage = [self scaleImage:image];
         cell.textLabel.text = [[_winnersArray objectAtIndex:indexPath.row] name];
         cell.imageView.image =scaledImage;
         cell.detailTextLabel.text = scoreString;

@@ -8,6 +8,7 @@
 
 #import "GameScreenViewController.h"
 #import "MHomeViewController.h"
+#import "MHttpConnection.h"
 
 @interface GameScreenViewController ()
 
@@ -32,6 +33,8 @@ int timeSec = 0;
 int timeMin = 0;
 NSTimer *timer;
 int timeInSeconds = 0;
+
+NSString *response;
 
 @synthesize imgArray,btnArray,flipped ,pressedBtn1,pressedBtn2;
 
@@ -262,13 +265,20 @@ int timeInSeconds = 0;
 }
 
 -(int) calcScore{
-//    int finalScore = score;
-//    int timeBonus =  0;
+    float timeBonus =  0;
+    /*
     NSLog(@"%s",[[NSString stringWithFormat:@"%d",timeInSeconds] UTF8String]);
     for (int i = 1; i<=timeInSeconds; i++) {
-        score += 100/i;
-        _scoreLabel.text = [NSString stringWithFormat:@"%d",score];
+       // score += 100/i;
+        //_scoreLabel.text = [NSString stringWithFormat:@"%d",score];
+        if (timeBonus >= 0) {
+            timeBonus*= 100.0f/i;
+        }
     }
+     */
+    timeBonus = 30000/timeInSeconds;
+    score += timeBonus;
+    _scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     //finalScore+= timeBonus;
     
     //write score to user defaults
@@ -278,6 +288,8 @@ int timeInSeconds = 0;
         [defaults setObject:[NSString stringWithFormat:@"%d",score] forKey:@"score"];
     }
     
+    //update the score at the server
+    [self updateScore];
     return score;
 }
 -(void) addAnimationToButton:(UIButton*) button{
@@ -332,6 +344,55 @@ int timeInSeconds = 0;
 
     }
     
+}
+
+
+// signin button pressed method implementation
+- (void) updateScore{
+    
+    // init response
+    response = @"";
+    
+    // get user data from user defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *score = [defaults objectForKey:@"score"];
+    NSString *userEmail = [defaults objectForKey:@"email"];
+    
+ 
+    // prepare request parameters
+    NSMutableDictionary *parameters = [NSMutableDictionary new];
+    [parameters setObject:userEmail forKey:@"email"];
+    [parameters setObject:score forKey:@"score"];
+    
+    // make servlet uri
+    NSString *uri = @"IOS-Game-Server/UpdateScore";
+        
+    // make http request
+    [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameters:parameters delegate:self];
+    
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    
+    
+    NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    response = [response stringByAppendingString:dataString];
+    
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    
+    
+    NSData* data = [response dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* responseData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    if([[responseData objectForKey:@"status"] isEqualToString:@"fail"]){
+        
+        // show message to user
+//        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Updating score" message:@"Server Error" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//        
+//        [dialog show];
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

@@ -79,8 +79,13 @@
     if([self validateInputs]){
         
         // Encode the Image with Base64
+        profileImg = [self scaleImage:profileImg];
         NSData *imageData = UIImagePNGRepresentation(profileImg);
         NSString *userImage = [imageData base64EncodedStringWithOptions:0];
+        
+        // get user score from user defaults
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *score = [defaults objectForKey:@"score"];
         
         // prepare request parameters
         NSMutableDictionary *parameters = [NSMutableDictionary new];
@@ -88,6 +93,7 @@
         [parameters setObject:userEmail forKey:@"email"];
         [parameters setObject:password forKey:@"password"];
         [parameters setObject:userImage forKey:@"image"];
+        [parameters setObject:score forKey:@"score"];
         
         // make servlet uri
         NSString *uri = @"IOS-Game-Server/EditProfileServlet";
@@ -97,6 +103,24 @@
     }
 
 }
+
+//scale the image to decrease its size
+-(UIImage *) scaleImage:(UIImage *) originalImage{
+    if(originalImage == nil){
+        originalImage = [UIImage imageNamed:@"user.png"];
+    }
+    CGRect rect = CGRectMake(0,0,100,100);
+    UIGraphicsBeginImageContext( rect.size );
+    [originalImage drawInRect:rect];
+    UIImage *picture1 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData *imageData = UIImagePNGRepresentation(picture1);
+    UIImage *img=[UIImage imageWithData:imageData];
+    
+    return img;
+}
+
 
 /*
  * This method is for validation
@@ -132,11 +156,11 @@
     
     if([[responseData objectForKey:@"status"] isEqualToString:@"fail"]){
         
-        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Edit Profile" message:@"Some thing wrong! .. Try again" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Edit Profile" message:@"Something went wrong! Try again" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         
         [dialog show];
         
-    }else{
+    }else if([[responseData objectForKey:@"status"] isEqualToString:@"success"]){
         
         // Encode the Image with Base64
         NSData *imageData = UIImagePNGRepresentation(profileImg);

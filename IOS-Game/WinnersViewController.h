@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WinnersViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface WinnersViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 @property (nonatomic, strong) NSMutableArray *winnersArray;
+- (IBAction)refresh:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *winnersTable;
 
 @end

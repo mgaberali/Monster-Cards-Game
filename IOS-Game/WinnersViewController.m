@@ -20,7 +20,7 @@ NSString *filePath;
 
 NSString* response;
 
-NSMutableArray* names;
+NSMutableArray* winners;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,8 +35,8 @@ NSMutableArray* names;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_app.png"]]];
+    response = [[NSMutableString alloc] initWithString:@""];
+	
     //initiating plist file path
     filePath = @"/Users/participant/Desktop/IOSGameGIT/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
@@ -44,6 +44,42 @@ NSMutableArray* names;
     //[self addWinnersToPlist];
     [self getWinnersFromPlist];
 
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    response = [response stringByAppendingString:dataString];
+    printf("response %s\n", [response UTF8String]);
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    printf("response %s\n", [response UTF8String]);
+    
+    NSData* data = [response dataUsingEncoding:NSUTF8StringEncoding];
+    //printf(@"%@", [data]);
+    NSArray* dictionaries = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    winners = [NSMutableArray new];
+    
+    for (NSDictionary* dictionary in dictionaries) {
+        NSString* name = [dictionary objectForKey:@"name"];
+        NSString* email = [dictionary objectForKey:@"email"];
+        int score = [[dictionary objectForKey:@"score"] intValue];
+        NSString *imageName = [dictionary objectForKey:@"imageName"];
+        HWinner *winner = [[HWinner alloc] initWithName:name email:email score:[NSNumber numberWithInt:score] winnerImage:imageName];
+        //archive the winners objects to be added to the list
+        NSData *winnerData = [NSKeyedArchiver archivedDataWithRootObject:winner];
+        [winners addObject:winnerData];
+        [winners writeToFile:fullPath atomically:YES];
+    }
+    
+    printf("----------------------------\n");
+    printf("Names:\n");
+    [self getWinnersFromPlist];
+    [_winnersTable reloadData];
+    //[self.tableView reloadData];
+    //[self addWinnersToPlist];
+    
 }
 
 /*
@@ -124,11 +160,6 @@ NSMutableArray* names;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    
-    if (names != nil) {
-        return [names count];
-    }
-    
     if (_winnersArray != nil) {
         return _winnersArray.count;
     } else {
@@ -184,10 +215,14 @@ NSMutableArray* names;
        
         // get user image
         NSString *imageString = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
-        NSData *imageData = [[NSData alloc] initWithBase64EncodedString:imageString options:0];
-        UIImage *image = [UIImage imageWithData:imageData];
-        
-        
+        UIImage *image;
+        if (imageString == nil) {
+            image= [UIImage imageNamed:@"user.png"];
+        } else {
+            NSData *imageData = [[NSData alloc] initWithBase64EncodedString:imageString options:0];
+            image = [UIImage imageWithData:imageData];
+        }
+
         //NSString *imageName = [[_winnersArray objectAtIndex:indexPath.row] winnerImage];
         NSMutableString *scoreString= [[NSMutableString alloc] initWithString:@"Score "];
         [scoreString appendString:[[[_winnersArray objectAtIndex:indexPath.row] score] stringValue]];
@@ -211,7 +246,7 @@ NSMutableArray* names;
     if(originalImage == nil){
         originalImage = [UIImage imageNamed:@"user.png"];
     }
-    CGRect rect = CGRectMake(0,0,75,75);
+    CGRect rect = CGRectMake(0,0,70,70);
     UIGraphicsBeginImageContext( rect.size );
     [originalImage drawInRect:rect];
     UIImage *picture1 = UIGraphicsGetImageFromCurrentImageContext();
@@ -247,4 +282,13 @@ NSMutableArray* names;
 }
 
 
+- (IBAction)refresh:(id)sender {
+    
+    printf("Getting top users\n");
+    NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.14:8083/IOS-Game-Server/TopTen"];
+    NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
+    NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
+    [connection start];
+
+}
 @end

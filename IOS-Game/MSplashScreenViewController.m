@@ -31,21 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    // create empty images array
-    NSMutableArray *images = [[NSMutableArray alloc] init];
-    
-    // load images into images array
-    for(int i =0; i<28; i++){
         
-        NSString *imageName = [NSString stringWithFormat:@"splash-%d.png",i+1];
-        [images addObject:[UIImage imageNamed:imageName]];
-    }
-    
-    // start animation with duration of 2 seconds
-    splashImageView.animationImages = images;
-    splashImageView.animationDuration = 2;
-    [splashImageView startAnimating];
-    
     
     // go to home screen after 5 seconds
     [self performSelector:@selector(goToHomeScreen) withObject:nil afterDelay:5];

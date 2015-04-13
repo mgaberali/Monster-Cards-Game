@@ -12,7 +12,13 @@
 
 @end
 
-@implementation MProfileViewController
+@implementation MProfileViewController{
+    UIImage *profileImg;
+    NSString *userEmail;
+    NSString *password;
+    NSString *userName;
+    NSString *response;
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,6 +38,9 @@
 {
     [super viewDidLoad];
     
+    // init response
+    response = @"";
+    
     // get user name from user defaults
     NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
     NSString *name=[userDefaults objectForKey:@"name"];
@@ -46,6 +55,10 @@
     [_imgv_profileImage setImage:image];
     
 	// Do any additional setup after loading the view.
+    userEmail = [userDefaults objectForKey:@"email"];
+    password = [userDefaults objectForKey:@"password"];
+    profileImg = image;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,65 +69,95 @@
 
 - (IBAction)saveButtonPressed:(id)sender{
     
+    // get data from textfields
+    userName =_txtf_name.text;
     
-    NSString *userName =_txtf_name.text;
-    
-    ////from useeeeeeeeeeeer defaults
-    NSString *password= @"77777";
-    NSString *userEmail= @"fromios";
-    NSString *userImage= @"aaa";
-    
-    
-    NSString *parameter = [NSString stringWithFormat:@"name=%@&password=%@&email=%@&userImage=%@",userName,password,userEmail,userImage];
-    
-    
-    NSData *parameterData = [parameter dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSString *postLength = [NSString stringWithFormat:@"%d" , [parameterData length]];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    //you must change IP to your IP if you will connect on DB
-    
-    [request setURL:[NSURL URLWithString:@"http://192.168.74.1:8084/IOS-Game-Server/EditProfileServlet"]];
-    
-    [request setHTTPMethod:@"POST"];
-    
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    
-    [request setHTTPBody:parameterData];
-    
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    [connection start];
-    
-    if( connection )
-    {
-        printf("connect\n");
+    if([self validateInputs]){
         
-    }else{
+        // Encode the Image with Base64
+        NSData *imageData = UIImagePNGRepresentation(profileImg);
+        NSString *userImage = [imageData base64EncodedStringWithOptions:0];
         
-        //serverResponse.text = NO_CONNECTION;
-        printf("not connect\n");
+        // prepare request parameters
+        NSMutableDictionary *parameters = [NSMutableDictionary new];
+        [parameters setObject:userName forKey:@"name"];
+        [parameters setObject:userEmail forKey:@"email"];
+        [parameters setObject:password forKey:@"password"];
+        [parameters setObject:userImage forKey:@"image"];
         
+        // make servlet uri
+        NSString *uri = @"IOS-Game-Server/EditProfileServlet";
         
+        // make http request
+        [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameters:parameters delegate:self];
     }
-    
-    
-    
+
 }
+
+/*
+ * This method is for validation
+ */
+- (Boolean) validateInputs{
+    
+    // validate if textfields are not empty
+    
+    // validate email using regx
+    
+    // validate password is not less than 8 chars
+    
+    // must show ui alert view to user
+    
+    return YES;
+}
+
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     
     
-    printf("didReceiveData\n\n\n");
     NSString *msgFromServer = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    response = [response stringByAppendingString:msgFromServer];
     
-    
-    printf("%s" , [msgFromServer UTF8String]);
 }
+
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    
+    
+    NSData* data = [response dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* responseData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+    if([[responseData objectForKey:@"status"] isEqualToString:@"fail"]){
+        
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Edit Profile" message:@"Some thing wrong! .. Try again" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [dialog show];
+        
+    }else{
+        
+        // Encode the Image with Base64
+        NSData *imageData = UIImagePNGRepresentation(profileImg);
+        NSString *userImage = [imageData base64EncodedStringWithOptions:0];
+        
+        // save user data in user defaults
+        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:userName forKey:@"name"];
+        [userDefaults setObject:userImage forKey:@"image"];
+        
+        // show message to user
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Edit Profile" message:@"Data Saved Successfully" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [dialog show];
+        
+        // go to home screen
+        UIPageViewController *homeView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+        
+        [self presentViewController:homeView animated:YES completion:nil];
+        
+    }
+    
+    
+}
+
 
 -(IBAction)cameraPress:(id)sender{
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
@@ -131,6 +174,9 @@
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     //Or you can get the image url from AssetsLibrary
     NSURL *path = [info valueForKey:UIImagePickerControllerReferenceURL];
+    
+    // set image profile
+    profileImg = image;
     
     [_imgv_profileImage setImage:image];
     [picker dismissViewControllerAnimated:YES completion:^{

@@ -127,15 +127,31 @@
  */
 - (Boolean) validateInputs{
     
+    Boolean isValid = YES;
+    
     // validate if textfields are not empty
-    
-    // validate email using regx
-    
-    // validate password is not less than 8 chars
-    
-    // must show ui alert view to user
-    
-    return YES;
+    if ([[_txtf_name text] length] > 0) {
+        
+        //check that name is not only numbers
+        NSCharacterSet * numbers=[NSCharacterSet decimalDigitCharacterSet];
+        NSCharacterSet * inputChar=[NSCharacterSet characterSetWithCharactersInString:[_txtf_name text]];
+        bool result= [numbers  isSupersetOfSet:inputChar];
+        //result is YES if the name is all numbers
+        if(result || [[_txtf_name text] length] < 3) {
+            isValid = NO;
+            // show message to user
+            UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Edit profile" message:@"Your name must contain at least 3 letters." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            
+            [dialog show];
+        }
+    } else {
+        isValid = NO;
+        // show message to user
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Please, Fill the required fields." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [dialog show];
+    }
+    return isValid;
 }
 
 

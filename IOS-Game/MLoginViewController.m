@@ -57,14 +57,43 @@
  */
 - (Boolean) validateInputs{
     
+    Boolean isValid = YES;
+    
     // validate if textfields are not empty
-    
+    if ([[txtf_email text] length] > 0 && [[txtf_password text] length] > 0) {
+        
     // validate email using regx
-    
-    
-    // must show ui alert view to user
-    
-    return YES;
+    BOOL stricterFilter = NO;
+    NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+    NSString *laxString = @".+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    //isValid = [emailTest evaluateWithObject:[txtf_email text]];
+    if ([emailTest evaluateWithObject:[txtf_email text]] == NO) {
+        isValid = NO;
+        // show message to user
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Invalid email format." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            
+        [dialog show];
+    } else {
+        // validate password is not less than 8 chars
+        if ([[txtf_password text] length] < 8) {
+            isValid = NO;
+            // show message to user
+            UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Password length is too short." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                
+            [dialog show];
+        }
+    }
+
+    } else {
+        isValid = NO;
+        // show message to user
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Please, Fill the required fields." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [dialog show];
+    }
+    return isValid;
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection {

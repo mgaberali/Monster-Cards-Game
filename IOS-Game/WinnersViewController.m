@@ -38,7 +38,7 @@ NSMutableArray* names;
 	// Do any additional setup after loading the view.
     //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_app.png"]]];
     //initiating plist file path
-    filePath = @"/Users/participant/Desktop/IOS-GAME-GIT/IOS-Game";
+    filePath = @"/Users/participant/Desktop/IOSGameGIT/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
     
     //[self addWinnersToPlist];

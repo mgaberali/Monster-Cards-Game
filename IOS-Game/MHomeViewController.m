@@ -9,6 +9,7 @@
 #import "MHomeViewController.h"
 #import "HWinner.h"
 #import "HReachability.h"
+#import "MHttpConnection.h"
 
 @interface MHomeViewController ()
 
@@ -264,12 +265,24 @@ bool hostActive;
     }
     
     if (self.hostActive) {
+        /*
+        // prepare request parameters
+        NSMutableDictionary *parameters = [NSMutableDictionary new];
+        // make servlet uri
+        NSString *uri = @"IOS-Game-Server/TopTen";
+        
+        // make http request
+        [MHttpConnection makeHttpRequestForUri:uri withMethod:@"GET" withParameters:parameters delegate:self];
+        */
+        
+        
         //[self addWinnersToPlist];
         printf("Getting top users\n");
         NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.14:8083/IOS-Game-Server/TopTen"];
         NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
         NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
         [connection start];
+        
     }
 }
 

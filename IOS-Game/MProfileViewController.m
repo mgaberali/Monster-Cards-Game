@@ -66,6 +66,14 @@
     password = [userDefaults objectForKey:@"password"];
     profileImg = image;
     
+    //textfield padding
+    UIView *paddingViewLeft3 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
+    _txtf_name.leftView = paddingViewLeft3;
+    _txtf_name.leftViewMode = UITextFieldViewModeAlways;
+    UIView *paddingViewRight3 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 10, 20)];
+    _txtf_name.rightView = paddingViewRight3;
+    _txtf_name.rightViewMode = UITextFieldViewModeAlways;
+    
 }
 
 - (void)didReceiveMemoryWarning

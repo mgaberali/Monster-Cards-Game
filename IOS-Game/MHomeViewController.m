@@ -88,6 +88,7 @@ bool hostActive;
         [btn_facebookShare setHidden:YES];
         [btn_login setHidden:NO];
         [btn_signout setHidden:YES];
+        //[_scoreLabel setHidden:YES];
         
     }else if([status isEqualToString:@"YES"]){
         
@@ -316,7 +317,6 @@ bool hostActive;
     
     [alert show];
     
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -326,6 +326,7 @@ bool hostActive;
         // change user status in user defaults
         NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
         [userDefaults setObject:@"NO" forKey:@"status"];
+        [userDefaults setObject:[NSString stringWithFormat:@"%d",0] forKey:@"score"];
         
         // hide all buttons except for sign in button
         [btn_profile setEnabled:NO];
@@ -333,6 +334,7 @@ bool hostActive;
         [btn_facebookShare setHidden:YES];
         [btn_login setHidden:NO];
         [btn_signout setHidden:YES];
+        _scoreLabel.text = @"Score : 0";
 
         
     }

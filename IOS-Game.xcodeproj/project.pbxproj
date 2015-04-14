@@ -103,6 +103,10 @@
 		D1A11FA81AD5EB6F00D67DEF /* celebrate.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A11FA71AD5EB6F00D67DEF /* celebrate.png */; };
 		D1A2792F1AD698F20081E716 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792D1AD698F20081E716 /* img1.png */; };
 		D1A279301AD698F20081E716 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792E1AD698F20081E716 /* img2.png */; };
+		D1A411501ADD505600EFA973 /* monster2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1A4114D1ADD505600EFA973 /* monster2.jpg */; };
+		D1A411511ADD505600EFA973 /* shalabi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1A4114E1ADD505600EFA973 /* shalabi.jpg */; };
+		D1A411651ADD539300EFA973 /* ankbot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1A411641ADD539300EFA973 /* ankbot.jpg */; };
+		D1A411671ADD571D00EFA973 /* highscore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1A411661ADD571D00EFA973 /* highscore.jpg */; };
 		D1A4E43E1AC871C50016389F /* MSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */; };
 		D1A882A91AC960C3009C435D /* MLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882A81AC960C3009C435D /* MLoginViewController.m */; };
 		D1A882AC1AC963FE009C435D /* MRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A882AB1AC963FE009C435D /* MRegisterViewController.m */; };
@@ -248,6 +252,10 @@
 		D1A11FA71AD5EB6F00D67DEF /* celebrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celebrate.png; sourceTree = "<group>"; };
 		D1A2792D1AD698F20081E716 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 		D1A2792E1AD698F20081E716 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
+		D1A4114D1ADD505600EFA973 /* monster2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = monster2.jpg; sourceTree = "<group>"; };
+		D1A4114E1ADD505600EFA973 /* shalabi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shalabi.jpg; sourceTree = "<group>"; };
+		D1A411641ADD539300EFA973 /* ankbot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ankbot.jpg; sourceTree = "<group>"; };
+		D1A411661ADD571D00EFA973 /* highscore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = highscore.jpg; sourceTree = "<group>"; };
 		D1A4E43C1AC871C50016389F /* MSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSplashScreenViewController.h; sourceTree = "<group>"; };
 		D1A4E43D1AC871C50016389F /* MSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSplashScreenViewController.m; sourceTree = "<group>"; };
 		D1A882A71AC960C3009C435D /* MLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLoginViewController.h; sourceTree = "<group>"; };
@@ -508,6 +516,11 @@
 		D1F5F94D1AD142BB00455DFF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D1A411661ADD571D00EFA973 /* highscore.jpg */,
+				D19EAEA81AD8F4F000365B9E /* Splash Screen */,
+				D1A4114D1ADD505600EFA973 /* monster2.jpg */,
+				D1A4114E1ADD505600EFA973 /* shalabi.jpg */,
+				D1A411641ADD539300EFA973 /* ankbot.jpg */,
 				D1A008AE1ADCA5B2001D0B07 /* app_logo58.png */,
 				D1A008AF1ADCA5B2001D0B07 /* app_logo80.png */,
 				D1A008B01ADCA5B2001D0B07 /* app_logo120.png */,
@@ -517,7 +530,6 @@
 				D1A0089B1ADC7D53001D0B07 /* monster.png */,
 				D1A008961ADC7902001D0B07 /* hole.png */,
 				D1A008971ADC7902001D0B07 /* logo.png */,
-				D19EAEA81AD8F4F000365B9E /* Splash Screen */,
 				D19A90D51AD8284B001445BF /* soundOff.png */,
 				D19A90D61AD8284B001445BF /* soundOn.png */,
 				D19841521ADC690900F5C915 /* sync.png */,
@@ -686,6 +698,7 @@
 				D19EAEE11AD8F51C00365B9E /* splash-21.png in Resources */,
 				D19EAEE41AD8F51C00365B9E /* splash-24.png in Resources */,
 				D1A008991ADC7902001D0B07 /* logo.png in Resources */,
+				D1A411511ADD505600EFA973 /* shalabi.jpg in Resources */,
 				D19EAECF1AD8F51C00365B9E /* splash-3.png in Resources */,
 				D1964ACA1AD594A00094DF5A /* victory.wav in Resources */,
 				D1A0089C1ADC7D53001D0B07 /* green_ball.png in Resources */,
@@ -701,6 +714,7 @@
 				D19841531ADC690900F5C915 /* sync.png in Resources */,
 				D1F5F9471AD142B600455DFF /* hala.jpg in Resources */,
 				D19AA4ED1AD1E89B008E67EE /* btn_settings.png in Resources */,
+				D1A411651ADD539300EFA973 /* ankbot.jpg in Resources */,
 				D1A008A31ADC91A5001D0B07 /* appear.wav in Resources */,
 				D19AA4F11AD1E89B008E67EE /* txtf_default.png in Resources */,
 				D19A90D71AD8284B001445BF /* soundOff.png in Resources */,
@@ -721,6 +735,7 @@
 				D19EAED21AD8F51C00365B9E /* splash-6.png in Resources */,
 				D19A90CF1AD809D3001445BF /* exit.png in Resources */,
 				D19EAED61AD8F51C00365B9E /* splash-10.png in Resources */,
+				D1A411501ADD505600EFA973 /* monster2.jpg in Resources */,
 				D19A90CD1AD80970001445BF /* exitRed.png in Resources */,
 				D1964AC91AD594A00094DF5A /* shotGun.wav in Resources */,
 				D194EC5E1AD40ACB00DAE40A /* boo.jpg in Resources */,
@@ -729,6 +744,7 @@
 				D1A0089D1ADC7D53001D0B07 /* monster.png in Resources */,
 				D1961A051AD1DDC1007D2FDB /* sound1.wav in Resources */,
 				D1A008A11ADC8F5D001D0B07 /* jumb.wav in Resources */,
+				D1A411671ADD571D00EFA973 /* highscore.jpg in Resources */,
 				D19EAEDE1AD8F51C00365B9E /* splash-18.png in Resources */,
 				D19EAECD1AD8F51C00365B9E /* splash-1.png in Resources */,
 				D1F5F9431AD142B600455DFF /* ahmed.jpg in Resources */,

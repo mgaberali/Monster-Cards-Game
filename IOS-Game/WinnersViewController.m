@@ -61,11 +61,11 @@ NSMutableArray* winners;
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     response = [response stringByAppendingString:dataString];
-    printf("response %s\n", [response UTF8String]);
+    //printf("response %s\n", [response UTF8String]);
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    printf("response %s\n", [response UTF8String]);
+    //printf("response %s\n", [response UTF8String]);
     
     NSData* data = [response dataUsingEncoding:NSUTF8StringEncoding];
     //printf(@"%@", [data]);
@@ -85,8 +85,8 @@ NSMutableArray* winners;
     }
     [winners writeToFile:fullPath atomically:YES];
     
-    printf("----------------------------\n");
-    printf("Names:\n");
+    //printf("----------------------------\n");
+    //printf("Names:\n");
     [self getWinnersFromPlist];
     [_winnersTable reloadData];
     [self hideProgressBar];
@@ -145,12 +145,12 @@ NSMutableArray* winners;
     //read the winners from the plist
     NSArray *winnersArrayArchived = [[NSArray alloc] initWithContentsOfFile:fullPath];
     for (int i =0; i< winnersArrayArchived.count; i++) {
-        printf("%s  ","\n object found ");
+        //printf("%s  ","\n object found ");
         //unarchive the winner object to be added to the winnersArray
         NSData *winnerData = [winnersArrayArchived objectAtIndex:i];
         HWinner *winnerRead = [NSKeyedUnarchiver unarchiveObjectWithData:winnerData];
         [_winnersArray addObject:winnerRead];
-        printf("%s  ", [[winnerRead name] UTF8String]);
+        //printf("%s  ", [[winnerRead name] UTF8String]);
     }
     
 }

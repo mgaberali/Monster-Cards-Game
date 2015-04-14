@@ -79,9 +79,9 @@ NSString *response;
     UIImage *img3=[UIImage imageNamed:@"roz.jpg"];
     UIImage *img4=[UIImage imageNamed:@"boo.jpg"];
     UIImage *img5=[UIImage imageNamed:@"andl.jpg"];
-    UIImage *img6=[UIImage imageNamed:@"img.jpg"];
-    UIImage *img7=[UIImage imageNamed:@"default.jpg"];
-    UIImage *img8=[UIImage imageNamed:@"hala.jpg"];
+    UIImage *img6=[UIImage imageNamed:@"shalabi.jpg"];
+    UIImage *img7=[UIImage imageNamed:@"ankbot.jpg"];
+    UIImage *img8=[UIImage imageNamed:@"monster2.jpg"];
     imagesArray = [[NSArray alloc]initWithObjects:img1,img2,img3,img4,img5,img6,img7,img8,nil];
     
     //randomize images positions
@@ -222,7 +222,7 @@ NSString *response;
                         firstCard = secondCard = nil;
                         
                     } else{
-                        [self playSound:@"goodLuck"];
+                        //[self playSound:@"goodLuck"];
                         [firstCard setEnabled:NO];
                         [secondCard setEnabled:NO];
                         
@@ -252,6 +252,7 @@ NSString *response;
                             _celebrateView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"celebrate.png"]];
                             
                         } else{
+                            [self playSound:@"goodLuck"];
                             printf("no celebration");
                         }
                         
@@ -285,6 +286,7 @@ NSString *response;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     int lastScore = [[defaults objectForKey:@"score"] integerValue];
     if (lastScore < score) {
+        _celebrateView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"highscore.jpg"]];
         [defaults setObject:[NSString stringWithFormat:@"%d",score] forKey:@"score"];
     }
     

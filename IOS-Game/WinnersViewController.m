@@ -50,6 +50,14 @@ NSMutableArray* winners;
 
 }
 
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    
+    [self hideProgressBar];
+    UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Server can't be reached" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [dialog show];
+}
+
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     response = [response stringByAppendingString:dataString];
@@ -81,7 +89,7 @@ NSMutableArray* winners;
     printf("Names:\n");
     [self getWinnersFromPlist];
     [_winnersTable reloadData];
-    [self enableAndHideProgress];
+    [self hideProgressBar];
     //[self.tableView reloadData];
     //[self addWinnersToPlist];
     
@@ -310,12 +318,12 @@ NSMutableArray* winners;
     [connection start];
     
     // show progress
-    [self disableAndShowProgress];
+    [self showProgressBar];
    
 }
 
 
-- (void) disableAndShowProgress{
+- (void) showProgressBar{
 
     // show progress indicator
     [_progressIndicator setHidden:NO];
@@ -403,7 +411,7 @@ NSMutableArray* winners;
     }
 }
 
-- (void) enableAndHideProgress{
+- (void) hideProgressBar{
     
     // hide progress indicator
     [_progressIndicator setHidden:YES];

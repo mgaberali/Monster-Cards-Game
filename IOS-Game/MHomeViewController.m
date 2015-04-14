@@ -296,7 +296,7 @@ bool hostActive;
     NSString *appUrl = @"www.play.google.com";
     
     // App image
-    UIImage *image = [UIImage imageNamed:@"mared.png"];
+    UIImage *image = [UIImage imageNamed:@"toShare.png"];
     
     // make post string
     NSString *postString = [name stringByAppendingString:@" got new score of "];

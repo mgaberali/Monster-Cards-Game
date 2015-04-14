@@ -312,7 +312,7 @@ bool hostActive;
 }
 - (IBAction)onSignOutPressed:(id)sender {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Are you sure you want to logout?" delegate:self  cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Are you sure you want to logout?" delegate:self  cancelButtonTitle:nil otherButtonTitles:@"Yes", @"No", nil];
     
     [alert show];
     

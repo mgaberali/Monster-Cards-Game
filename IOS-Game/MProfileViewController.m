@@ -227,4 +227,12 @@
     }];
 }
 
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    
+    
+    UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Server can't be reached" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [dialog show];
+}
+
 @end

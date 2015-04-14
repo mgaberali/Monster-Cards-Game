@@ -90,6 +90,14 @@ bool hostActive;
     
 }
 
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    
+    
+    UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Server can't be reached" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [dialog show];
+}
+
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     response = [response stringByAppendingString:dataString];

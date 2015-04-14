@@ -20,7 +20,7 @@
 }
 
 // synthesize elements
-@synthesize txtf_email, txtf_password, btn_register, btn_sigin ,response;
+@synthesize txtf_email, txtf_password, btn_register, btn_sigin ,response, progressIndicator;
 
 
 // signin button pressed method implementation
@@ -48,8 +48,39 @@
         [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameters:parameters delegate:self];
     
         
+        // show progress
+        [self disableAndShowProgress];
+        
+        
     }
  
+}
+
+- (void) disableAndShowProgress{
+    
+    // disable all functionalities
+    [btn_register setEnabled:NO];
+    [btn_sigin setEnabled:NO];
+    [txtf_email setEnabled:NO];
+    [txtf_password setEnabled:NO];
+    
+    // show progress indicator
+    [progressIndicator setHidden:NO];
+    [progressIndicator startAnimating];
+    
+}
+
+- (void) enableAndHideProgress{
+    
+    // enable all functionalities
+    [btn_register setEnabled:YES];
+    [btn_sigin setEnabled:YES];
+    [txtf_email setEnabled:YES];
+    [txtf_password setEnabled:YES];
+    
+    // hide progress indicator
+    [progressIndicator setHidden:YES];
+    [progressIndicator stopAnimating];
 }
 
 /*
@@ -104,6 +135,9 @@
 
     if([[responseData objectForKey:@"status"] isEqualToString:@"fail"]){
         
+        // enable and hide progress indicator
+        [self enableAndHideProgress];
+        
         UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Signing in" message:@"Invalid Email/Password" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         
         [dialog show];
@@ -156,12 +190,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+ 
+    [progressIndicator setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    
+    
+    UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Server can't be reached" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [dialog show];
+    
+    // hide progress indicator
+    [self enableAndHideProgress];
 }
 
 @end

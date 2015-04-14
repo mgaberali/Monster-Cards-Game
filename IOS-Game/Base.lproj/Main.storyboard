@@ -104,6 +104,10 @@
                                     <segue destination="TlR-r4-Pxd" kind="modal" identifier="registerSegue" id="Dmq-Kf-2SY"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="S5t-Gj-bwm">
+                                <rect key="frame" x="149" y="179" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -111,6 +115,7 @@
                     <connections>
                         <outlet property="btn_register" destination="SCz-Ma-ZR8" id="cdp-Nc-Vii"/>
                         <outlet property="btn_sigin" destination="nws-VZ-AsW" id="2YA-kt-gXI"/>
+                        <outlet property="progressIndicator" destination="S5t-Gj-bwm" id="TWT-zc-O7H"/>
                         <outlet property="txtf_email" destination="hO1-hg-iCh" id="eHX-hz-5hA"/>
                         <outlet property="txtf_password" destination="qTc-3D-zwB" id="w4S-Fe-RFg"/>
                     </connections>

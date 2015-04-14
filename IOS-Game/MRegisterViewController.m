@@ -20,7 +20,7 @@
 }
 
 // synthesize elements
-@synthesize txtf_password, txtf_name, txtf_email, btn_signup, imgv_profileImage;
+@synthesize txtf_password, txtf_name, txtf_email, btn_signup, imgv_profileImage, progressIndicator;
 
 
 // signin button pressed method implementation
@@ -53,8 +53,41 @@
     
          // make http request
          [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameters:parameters delegate:self];
+         
+         // show progress
+         [self disableAndShowProgress];
+
+     
      }
 }
+
+- (void) disableAndShowProgress{
+    
+    // disable all functionalities
+    [btn_signup setEnabled:NO];
+    [txtf_name setEnabled:NO];
+    [txtf_email setEnabled:NO];
+    [txtf_password setEnabled:NO];
+    
+    // show progress indicator
+    [progressIndicator setHidden:NO];
+    [progressIndicator startAnimating];
+    
+}
+
+- (void) enableAndHideProgress{
+    
+    // enable all functionalities
+    [btn_signup setEnabled:YES];
+    [txtf_name setEnabled:YES];
+    [txtf_email setEnabled:YES];
+    [txtf_password setEnabled:YES];
+    
+    // hide progress indicator
+    [progressIndicator setHidden:YES];
+    [progressIndicator stopAnimating];
+}
+
 
 /*
  * This method is for validation
@@ -130,6 +163,9 @@
     NSDictionary* responseData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     
     if([[responseData objectForKey:@"status"] isEqualToString:@"fail"]){
+        
+        // hide progress indicator
+        [self enableAndHideProgress];
         
         // show message to user
         UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Email already exists" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -210,7 +246,8 @@
 //    [backButton setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
 //    [self.navigationItem.leftBarButtonItem setTarget:self];
-    
+
+    [progressIndicator setHidden:YES];
     
     UIView *paddingViewLeft3 = [[UIView alloc] initWithFrame:CGRectMake(160, 206, 47, 20)];
     txtf_name.leftView = paddingViewLeft3;
@@ -269,6 +306,9 @@
     UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Server can't be reached" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     
     [dialog show];
+    
+    // hide progress indicator
+    [self enableAndHideProgress];
 }
 
 @end

@@ -103,7 +103,7 @@
     if ([emailTest evaluateWithObject:[txtf_email text]] == NO) {
         isValid = NO;
         // show message to user
-        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Invalid email format." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign In" message:@"Invalid email format." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             
         [dialog show];
     } else {
@@ -111,7 +111,7 @@
         if ([[txtf_password text] length] < 8) {
             isValid = NO;
             // show message to user
-            UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Password length is too short." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign In" message:@"Password length is too short." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                 
             [dialog show];
         }
@@ -120,7 +120,7 @@
     } else {
         isValid = NO;
         // show message to user
-        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign Up" message:@"Please, Fill the required fields." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Sign In" message:@"Please, Fill the required fields." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         
         [dialog show];
     }

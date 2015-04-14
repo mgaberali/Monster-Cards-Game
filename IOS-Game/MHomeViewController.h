@@ -10,7 +10,7 @@
 #import "MSocialShareUtility.h"
 @class Reachability;
 
-@interface MHomeViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface MHomeViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate, UIAlertViewDelegate>
 {
     Reachability* internetReachable;
     Reachability* hostReachable;
@@ -44,5 +44,7 @@
 
 -(void) checkNetworkStatus:(NSNotification *)notice;
 
+- (IBAction)onSignOutPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btn_signout;
 
 @end

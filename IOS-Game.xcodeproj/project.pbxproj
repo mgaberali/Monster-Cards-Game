@@ -96,6 +96,10 @@
 		D1A008A11ADC8F5D001D0B07 /* jumb.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1A0089F1ADC8F5D001D0B07 /* jumb.wav */; };
 		D1A008A31ADC91A5001D0B07 /* appear.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A21ADC91A5001D0B07 /* appear.wav */; };
 		D1A008A51ADC9612001D0B07 /* toShare.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A41ADC9612001D0B07 /* toShare.png */; };
+		D1A008AA1ADC9F19001D0B07 /* app_logo58.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A61ADC9F19001D0B07 /* app_logo58.png */; };
+		D1A008AB1ADC9F19001D0B07 /* app_logo80.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A71ADC9F19001D0B07 /* app_logo80.png */; };
+		D1A008AC1ADC9F19001D0B07 /* app_logo120.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A81ADC9F19001D0B07 /* app_logo120.png */; };
+		D1A008AD1ADC9F19001D0B07 /* btn_signout.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A91ADC9F19001D0B07 /* btn_signout.png */; };
 		D1A11FA81AD5EB6F00D67DEF /* celebrate.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A11FA71AD5EB6F00D67DEF /* celebrate.png */; };
 		D1A2792F1AD698F20081E716 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792D1AD698F20081E716 /* img1.png */; };
 		D1A279301AD698F20081E716 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792E1AD698F20081E716 /* img2.png */; };
@@ -237,6 +241,10 @@
 		D1A0089F1ADC8F5D001D0B07 /* jumb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jumb.wav; sourceTree = "<group>"; };
 		D1A008A21ADC91A5001D0B07 /* appear.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = appear.wav; sourceTree = "<group>"; };
 		D1A008A41ADC9612001D0B07 /* toShare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toShare.png; sourceTree = "<group>"; };
+		D1A008A61ADC9F19001D0B07 /* app_logo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo58.png; sourceTree = "<group>"; };
+		D1A008A71ADC9F19001D0B07 /* app_logo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo80.png; sourceTree = "<group>"; };
+		D1A008A81ADC9F19001D0B07 /* app_logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo120.png; sourceTree = "<group>"; };
+		D1A008A91ADC9F19001D0B07 /* btn_signout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_signout.png; sourceTree = "<group>"; };
 		D1A11FA71AD5EB6F00D67DEF /* celebrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celebrate.png; sourceTree = "<group>"; };
 		D1A2792D1AD698F20081E716 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 		D1A2792E1AD698F20081E716 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
@@ -500,6 +508,10 @@
 		D1F5F94D1AD142BB00455DFF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D1A008A61ADC9F19001D0B07 /* app_logo58.png */,
+				D1A008A71ADC9F19001D0B07 /* app_logo80.png */,
+				D1A008A81ADC9F19001D0B07 /* app_logo120.png */,
+				D1A008A91ADC9F19001D0B07 /* btn_signout.png */,
 				D1A008A41ADC9612001D0B07 /* toShare.png */,
 				D1A0089A1ADC7D53001D0B07 /* green_ball.png */,
 				D1A0089B1ADC7D53001D0B07 /* monster.png */,
@@ -629,6 +641,7 @@
 				D1961A061AD1DDC1007D2FDB /* sound2.wav in Resources */,
 				D1964AC61AD594A00094DF5A /* ballonPopping.wav in Resources */,
 				D1964AC71AD594A00094DF5A /* soundflip.wav in Resources */,
+				D1A008AD1ADC9F19001D0B07 /* btn_signout.png in Resources */,
 				D19EAEE21AD8F51C00365B9E /* splash-22.png in Resources */,
 				D19EAEDB1AD8F51C00365B9E /* splash-15.png in Resources */,
 				D1F5F9451AD142B600455DFF /* big.jpg in Resources */,
@@ -651,6 +664,7 @@
 				D19841551ADC6C5800F5C915 /* sync-06.png in Resources */,
 				D19AA4F51AD1EBE4008E67EE /* img2.png in Resources */,
 				D19EAEDC1AD8F51C00365B9E /* splash-16.png in Resources */,
+				D1A008AA1ADC9F19001D0B07 /* app_logo58.png in Resources */,
 				D1B400DC1AD8672000BD9C24 /* goodLuck.wav in Resources */,
 				D19AA4F41AD1EBE4008E67EE /* img1.png in Resources */,
 				D19AA4F91AD1F57A008E67EE /* btn_save.png in Resources */,
@@ -674,6 +688,7 @@
 				D1A008991ADC7902001D0B07 /* logo.png in Resources */,
 				D19EAECF1AD8F51C00365B9E /* splash-3.png in Resources */,
 				D1964ACA1AD594A00094DF5A /* victory.wav in Resources */,
+				D1A008AB1ADC9F19001D0B07 /* app_logo80.png in Resources */,
 				D1A0089C1ADC7D53001D0B07 /* green_ball.png in Resources */,
 				D19EAED91AD8F51C00365B9E /* splash-13.png in Resources */,
 				D19EAEEF1AD8F51C00365B9E /* splash-35.png in Resources */,
@@ -692,6 +707,7 @@
 				D19A90D71AD8284B001445BF /* soundOff.png in Resources */,
 				D19AA4EB1AD1E89B008E67EE /* btn_leaderboard.png in Resources */,
 				D19EAEF01AD8F51C00365B9E /* splash-36.png in Resources */,
+				D1A008AC1ADC9F19001D0B07 /* app_logo120.png in Resources */,
 				D1A008A51ADC9612001D0B07 /* toShare.png in Resources */,
 				D19AA4EE1AD1E89B008E67EE /* btn_signin.png in Resources */,
 				D19AA4F81AD1F57A008E67EE /* btn_register.png in Resources */,

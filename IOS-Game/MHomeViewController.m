@@ -29,7 +29,7 @@ Reachability *internetReachableFoo;
 bool hostActive;
 
 // synthesize elements
-@synthesize btn_facebookShare, btn_leaderBoard, btn_play, btn_profile, btn_login;
+@synthesize btn_facebookShare, btn_leaderBoard, btn_play, btn_profile, btn_login, btn_signout;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -87,6 +87,7 @@ bool hostActive;
         [btn_leaderBoard setEnabled:NO];
         [btn_facebookShare setHidden:YES];
         [btn_login setHidden:NO];
+        [btn_signout setHidden:YES];
         
     }else if([status isEqualToString:@"YES"]){
         
@@ -94,6 +95,7 @@ bool hostActive;
         [btn_leaderBoard setEnabled:YES];
         [btn_facebookShare setHidden:NO];
         [btn_login setHidden:YES];
+        [btn_signout setHidden:NO];
         
     }
     
@@ -308,4 +310,32 @@ bool hostActive;
     [MSocialShareUtility sharePostOnFB:postString withLink:appUrl withImage:image fromViewCotroller:self];
     
 }
+- (IBAction)onSignOutPressed:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Are you sure you want to logout?" delegate:self  cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    
+    [alert show];
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if(buttonIndex == 0){
+        
+        // change user status in user defaults
+        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:@"NO" forKey:@"status"];
+        
+        // hide all buttons except for sign in button
+        [btn_profile setEnabled:NO];
+        [btn_leaderBoard setEnabled:NO];
+        [btn_facebookShare setHidden:YES];
+        [btn_login setHidden:NO];
+        [btn_signout setHidden:YES];
+
+        
+    }
+}
+
 @end

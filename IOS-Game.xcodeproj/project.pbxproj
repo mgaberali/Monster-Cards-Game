@@ -96,10 +96,10 @@
 		D1A008A11ADC8F5D001D0B07 /* jumb.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1A0089F1ADC8F5D001D0B07 /* jumb.wav */; };
 		D1A008A31ADC91A5001D0B07 /* appear.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A21ADC91A5001D0B07 /* appear.wav */; };
 		D1A008A51ADC9612001D0B07 /* toShare.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A41ADC9612001D0B07 /* toShare.png */; };
-		D1A008AA1ADC9F19001D0B07 /* app_logo58.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A61ADC9F19001D0B07 /* app_logo58.png */; };
-		D1A008AB1ADC9F19001D0B07 /* app_logo80.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A71ADC9F19001D0B07 /* app_logo80.png */; };
-		D1A008AC1ADC9F19001D0B07 /* app_logo120.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A81ADC9F19001D0B07 /* app_logo120.png */; };
 		D1A008AD1ADC9F19001D0B07 /* btn_signout.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008A91ADC9F19001D0B07 /* btn_signout.png */; };
+		D1A008B11ADCA5B2001D0B07 /* app_logo58.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008AE1ADCA5B2001D0B07 /* app_logo58.png */; };
+		D1A008B21ADCA5B2001D0B07 /* app_logo80.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008AF1ADCA5B2001D0B07 /* app_logo80.png */; };
+		D1A008B31ADCA5B2001D0B07 /* app_logo120.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A008B01ADCA5B2001D0B07 /* app_logo120.png */; };
 		D1A11FA81AD5EB6F00D67DEF /* celebrate.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A11FA71AD5EB6F00D67DEF /* celebrate.png */; };
 		D1A2792F1AD698F20081E716 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792D1AD698F20081E716 /* img1.png */; };
 		D1A279301AD698F20081E716 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A2792E1AD698F20081E716 /* img2.png */; };
@@ -241,10 +241,10 @@
 		D1A0089F1ADC8F5D001D0B07 /* jumb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jumb.wav; sourceTree = "<group>"; };
 		D1A008A21ADC91A5001D0B07 /* appear.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = appear.wav; sourceTree = "<group>"; };
 		D1A008A41ADC9612001D0B07 /* toShare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toShare.png; sourceTree = "<group>"; };
-		D1A008A61ADC9F19001D0B07 /* app_logo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo58.png; sourceTree = "<group>"; };
-		D1A008A71ADC9F19001D0B07 /* app_logo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo80.png; sourceTree = "<group>"; };
-		D1A008A81ADC9F19001D0B07 /* app_logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo120.png; sourceTree = "<group>"; };
 		D1A008A91ADC9F19001D0B07 /* btn_signout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_signout.png; sourceTree = "<group>"; };
+		D1A008AE1ADCA5B2001D0B07 /* app_logo58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo58.png; sourceTree = "<group>"; };
+		D1A008AF1ADCA5B2001D0B07 /* app_logo80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo80.png; sourceTree = "<group>"; };
+		D1A008B01ADCA5B2001D0B07 /* app_logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo120.png; sourceTree = "<group>"; };
 		D1A11FA71AD5EB6F00D67DEF /* celebrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celebrate.png; sourceTree = "<group>"; };
 		D1A2792D1AD698F20081E716 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 		D1A2792E1AD698F20081E716 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 		D1A882B41AC9B4E0009C435D /* MProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MProfileViewController.m; sourceTree = "<group>"; };
 		D1A882B61AC9B6CC009C435D /* MLeaderBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLeaderBoardViewController.h; sourceTree = "<group>"; };
 		D1A882B71AC9B6CC009C435D /* MLeaderBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLeaderBoardViewController.m; sourceTree = "<group>"; };
-		D1AAF8891AC719CD00E42A2D /* IOS-Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1AAF8891AC719CD00E42A2D /* Monster Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Monster Cards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1AAF88C1AC719CD00E42A2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D1AAF88E1AC719CD00E42A2D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D1AAF8901AC719CD00E42A2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -440,7 +440,7 @@
 		D1AAF88A1AC719CD00E42A2D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D1AAF8891AC719CD00E42A2D /* IOS-Game.app */,
+				D1AAF8891AC719CD00E42A2D /* Monster Cards.app */,
 				D1AAF8AA1AC719CE00E42A2D /* IOS-GameTests.xctest */,
 			);
 			name = Products;
@@ -508,9 +508,9 @@
 		D1F5F94D1AD142BB00455DFF /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D1A008A61ADC9F19001D0B07 /* app_logo58.png */,
-				D1A008A71ADC9F19001D0B07 /* app_logo80.png */,
-				D1A008A81ADC9F19001D0B07 /* app_logo120.png */,
+				D1A008AE1ADCA5B2001D0B07 /* app_logo58.png */,
+				D1A008AF1ADCA5B2001D0B07 /* app_logo80.png */,
+				D1A008B01ADCA5B2001D0B07 /* app_logo120.png */,
 				D1A008A91ADC9F19001D0B07 /* btn_signout.png */,
 				D1A008A41ADC9612001D0B07 /* toShare.png */,
 				D1A0089A1ADC7D53001D0B07 /* green_ball.png */,
@@ -576,7 +576,7 @@
 			);
 			name = "IOS-Game";
 			productName = "IOS-Game";
-			productReference = D1AAF8891AC719CD00E42A2D /* IOS-Game.app */;
+			productReference = D1AAF8891AC719CD00E42A2D /* Monster Cards.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D1AAF8A91AC719CE00E42A2D /* IOS-GameTests */ = {
@@ -650,6 +650,7 @@
 				D1F5F9441AD142B600455DFF /* bg.png in Resources */,
 				D194EC5F1AD40ACB00DAE40A /* mared.png in Resources */,
 				D19EAED01AD8F51C00365B9E /* splash-4.png in Resources */,
+				D1A008B31ADCA5B2001D0B07 /* app_logo120.png in Resources */,
 				D1F5F94C1AD142B600455DFF /* WinnersPList.plist in Resources */,
 				D19AA4E91AD1E89B008E67EE /* btn_facebook_share.png in Resources */,
 				D1F5F9461AD142B600455DFF /* default.jpg in Resources */,
@@ -664,7 +665,6 @@
 				D19841551ADC6C5800F5C915 /* sync-06.png in Resources */,
 				D19AA4F51AD1EBE4008E67EE /* img2.png in Resources */,
 				D19EAEDC1AD8F51C00365B9E /* splash-16.png in Resources */,
-				D1A008AA1ADC9F19001D0B07 /* app_logo58.png in Resources */,
 				D1B400DC1AD8672000BD9C24 /* goodLuck.wav in Resources */,
 				D19AA4F41AD1EBE4008E67EE /* img1.png in Resources */,
 				D19AA4F91AD1F57A008E67EE /* btn_save.png in Resources */,
@@ -688,7 +688,6 @@
 				D1A008991ADC7902001D0B07 /* logo.png in Resources */,
 				D19EAECF1AD8F51C00365B9E /* splash-3.png in Resources */,
 				D1964ACA1AD594A00094DF5A /* victory.wav in Resources */,
-				D1A008AB1ADC9F19001D0B07 /* app_logo80.png in Resources */,
 				D1A0089C1ADC7D53001D0B07 /* green_ball.png in Resources */,
 				D19EAED91AD8F51C00365B9E /* splash-13.png in Resources */,
 				D19EAEEF1AD8F51C00365B9E /* splash-35.png in Resources */,
@@ -707,8 +706,8 @@
 				D19A90D71AD8284B001445BF /* soundOff.png in Resources */,
 				D19AA4EB1AD1E89B008E67EE /* btn_leaderboard.png in Resources */,
 				D19EAEF01AD8F51C00365B9E /* splash-36.png in Resources */,
-				D1A008AC1ADC9F19001D0B07 /* app_logo120.png in Resources */,
 				D1A008A51ADC9612001D0B07 /* toShare.png in Resources */,
+				D1A008B11ADCA5B2001D0B07 /* app_logo58.png in Resources */,
 				D19AA4EE1AD1E89B008E67EE /* btn_signin.png in Resources */,
 				D19AA4F81AD1F57A008E67EE /* btn_register.png in Resources */,
 				D1AAF8A01AC719CD00E42A2D /* Main.storyboard in Resources */,
@@ -718,6 +717,7 @@
 				D12E20FB1ADBE6730015D980 /* goodLuck2.wav in Resources */,
 				D1A008981ADC7902001D0B07 /* hole.png in Resources */,
 				D19EAED31AD8F51C00365B9E /* splash-7.png in Resources */,
+				D1A008B21ADCA5B2001D0B07 /* app_logo80.png in Resources */,
 				D19EAED21AD8F51C00365B9E /* splash-6.png in Resources */,
 				D19A90CF1AD809D3001445BF /* exit.png in Resources */,
 				D19EAED61AD8F51C00365B9E /* splash-10.png in Resources */,
@@ -902,7 +902,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IOS-Game/IOS-Game-Prefix.pch";
 				INFOPLIST_FILE = "IOS-Game/IOS-Game-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Monster Cards";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -915,7 +915,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IOS-Game/IOS-Game-Prefix.pch";
 				INFOPLIST_FILE = "IOS-Game/IOS-Game-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Monster Cards";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -286,6 +286,7 @@ NSString *response;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     int lastScore = [[defaults objectForKey:@"score"] integerValue];
     if (lastScore < score) {
+        _celebrateView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"highscore.jpg"]];
         [defaults setObject:[NSString stringWithFormat:@"%d",score] forKey:@"score"];
     }
     

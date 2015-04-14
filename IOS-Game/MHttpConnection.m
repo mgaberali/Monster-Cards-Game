@@ -12,7 +12,7 @@
 
 
 // you can define your server ip here
-static NSString *SERVERIP = @"http://10.145.19.131:8083/";
+static NSString *SERVERIP = @"http://10.145.19.165:8084/";
 
 +(void)makeHttpRequestForUri:(NSString *)uri withMethod:(NSString *)method withParameters:(NSMutableDictionary *)parameters delegate:(id)delegate{
     

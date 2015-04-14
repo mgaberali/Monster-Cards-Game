@@ -44,6 +44,9 @@ NSMutableArray* winners;
     
     //[self addWinnersToPlist];
     [self getWinnersFromPlist];
+    
+    //hide progress bar
+    [_progressIndicator setHidden:YES];
 
 }
 
@@ -78,6 +81,7 @@ NSMutableArray* winners;
     printf("Names:\n");
     [self getWinnersFromPlist];
     [_winnersTable reloadData];
+    [self enableAndHideProgress];
     //[self.tableView reloadData];
     //[self addWinnersToPlist];
     
@@ -304,7 +308,19 @@ NSMutableArray* winners;
     NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
     NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
     [connection start];
+    
+    // show progress
+    [self disableAndShowProgress];
    
+}
+
+
+- (void) disableAndShowProgress{
+
+    // show progress indicator
+    [_progressIndicator setHidden:NO];
+    [_progressIndicator startAnimating];
+    
 }
 
 -(void) checkNetworkStatus:(NSNotification *)notice
@@ -385,6 +401,13 @@ NSMutableArray* winners;
         
         [dialog show];
     }
+}
+
+- (void) enableAndHideProgress{
+    
+    // hide progress indicator
+    [_progressIndicator setHidden:YES];
+    [_progressIndicator stopAnimating];
 }
 
 @end

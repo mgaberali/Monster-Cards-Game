@@ -21,4 +21,6 @@
 @property bool internetActive;
 @property bool hostActive;
 -(void) checkNetworkStatus:(NSNotification *)notice;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressIndicator;
 @end

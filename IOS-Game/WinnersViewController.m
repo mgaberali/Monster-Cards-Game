@@ -39,7 +39,7 @@ NSMutableArray* winners;
     response = [[NSMutableString alloc] initWithString:@""];
 	
     //initiating plist file path
-    filePath = @"/Users/participant/Desktop/IOSGIT/IOS-Game";
+    filePath = @"/Users/participant/Desktop/IOS-Game/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
     
     //[self addWinnersToPlist];
@@ -312,7 +312,7 @@ NSMutableArray* winners;
      */
    
     printf("Getting top users\n");
-    NSURL *url=[[NSURL alloc]initWithString:@"http://10.145.19.131:8083/IOS-Game-Server/TopTen"];
+    NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.74.1:8084/IOS-Game-Server/TopTen"];
     NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
     NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
     [connection start];

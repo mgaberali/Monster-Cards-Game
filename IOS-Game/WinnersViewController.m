@@ -70,8 +70,8 @@ NSMutableArray* winners;
         //archive the winners objects to be added to the list
         NSData *winnerData = [NSKeyedArchiver archivedDataWithRootObject:winner];
         [winners addObject:winnerData];
-        [winners writeToFile:fullPath atomically:YES];
     }
+    [winners writeToFile:fullPath atomically:YES];
     
     printf("----------------------------\n");
     printf("Names:\n");
@@ -283,7 +283,7 @@ NSMutableArray* winners;
 
 
 - (IBAction)refresh:(id)sender {
-    
+    response = [[NSMutableString alloc] initWithString:@""];
     printf("Getting top users\n");
     NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.14:8083/IOS-Game-Server/TopTen"];
     NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];

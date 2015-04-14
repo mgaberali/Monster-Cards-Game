@@ -47,6 +47,7 @@ bool hostActive;
     //self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_app.png"]];
     //self.tableView.backgroundColor = [UIColor clearColor];
     
+    /*
     // check for internet connection
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
@@ -58,6 +59,7 @@ bool hostActive;
     [hostReachable startNotifier];
     
     // now patiently wait for the notification
+     */
 }
 
 - (void)viewDidLoad
@@ -111,7 +113,7 @@ bool hostActive;
 - (IBAction)leaderBoardButton:(id)sender {
     
 }
-
+/*
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     NSString* dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     response = [response stringByAppendingString:dataString];
@@ -183,7 +185,7 @@ bool hostActive;
     printf("%s ", "Your data has been saved.");
 }
 */
-
+/*
 // Checks if we have an internet connection or not
 - (void)testInternetConnection
 {
@@ -274,7 +276,7 @@ bool hostActive;
         // make http request
         [MHttpConnection makeHttpRequestForUri:uri withMethod:@"GET" withParameters:parameters delegate:self];
         */
-        
+        /*
         //[self addWinnersToPlist];
         printf("Getting top users\n");
         NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.14:8083/IOS-Game-Server/TopTen"];
@@ -284,7 +286,7 @@ bool hostActive;
         
     }
 }
-
+*/
 - (IBAction)onShareBtnPressed:(id)sender {
     
     // get user data from user defaults

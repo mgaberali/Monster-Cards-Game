@@ -335,6 +335,7 @@ bool hostActive;
         [btn_facebookShare setHidden:YES];
         [btn_login setHidden:NO];
         [btn_signout setHidden:YES];
+        _scoreLabel.text = @"Score : 0";
 
         
     }

@@ -26,4 +26,6 @@
 - (IBAction)saveButtonPressed:(id)sender;
 -(IBAction)cameraPress:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *progressIndicator;
+
 @end

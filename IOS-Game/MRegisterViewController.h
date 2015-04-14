@@ -32,4 +32,6 @@
 // signup button pressed method
 - (IBAction)signupButtonPressed:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *progressIndicator;
+
 @end

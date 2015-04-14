@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="S5t-Gj-bwm">
-                                <rect key="frame" x="149" y="179" width="20" height="20"/>
+                                <rect key="frame" x="149" y="44" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
@@ -281,6 +281,10 @@
                                     <segue destination="RBI-zp-oef" kind="modal" id="KAb-iR-kMY"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Bcy-fw-fRF">
+                                <rect key="frame" x="150" y="54" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -288,6 +292,7 @@
                     <connections>
                         <outlet property="btn_save" destination="X7o-mP-uC2" id="a5R-Py-flx"/>
                         <outlet property="imgv_profileImage" destination="7MS-iL-jOW" id="Q3b-cp-qeE"/>
+                        <outlet property="progressIndicator" destination="Bcy-fw-fRF" id="9N5-Uq-B4U"/>
                         <outlet property="txtf_name" destination="8jo-Sd-s9W" id="p1z-Sn-3dS"/>
                     </connections>
                 </viewController>
@@ -696,6 +701,10 @@
                                     <segue destination="vjY-cb-6t2" kind="modal" id="aHx-PS-D4e"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fTx-EL-Pz9">
+                                <rect key="frame" x="150" y="43" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -703,6 +712,7 @@
                     <connections>
                         <outlet property="btn_signup" destination="RYd-Pj-v3n" id="Kgg-n5-AAR"/>
                         <outlet property="imgv_profileImage" destination="m9k-rZ-0gi" id="XoT-DB-eAF"/>
+                        <outlet property="progressIndicator" destination="fTx-EL-Pz9" id="abh-lj-Jfi"/>
                         <outlet property="txtf_email" destination="yjE-3Y-JLG" id="fkU-b9-c3U"/>
                         <outlet property="txtf_name" destination="u26-YZ-Q17" id="3NF-ag-QAk"/>
                         <outlet property="txtf_password" destination="3Fc-YJ-F7m" id="tXt-So-BvG"/>
@@ -766,7 +776,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="UXr-5C-wuI"/>
-        <segue reference="L8m-JI-h0X"/>
+        <segue reference="KAb-iR-kMY"/>
+        <segue reference="aHx-PS-D4e"/>
     </inferredMetricsTieBreakers>
 </document>

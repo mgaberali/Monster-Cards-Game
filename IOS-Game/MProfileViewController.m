@@ -20,6 +20,7 @@
     NSString *response;
 }
 
+@synthesize progressIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [progressIndicator setHidden:YES];
     
     // init response
     response = @"";
@@ -71,6 +74,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) disableAndShowProgress{
+    
+    // disable all functionalities
+    [_txtf_name setEnabled:NO];
+    [_btn_save setEnabled:NO];
+    
+    // show progress indicator
+    [progressIndicator setHidden:NO];
+    [progressIndicator startAnimating];
+    
+}
+
+- (void) enableAndHideProgress{
+    
+    // enable all functionalities
+    [_txtf_name setEnabled:YES];
+    [_btn_save setEnabled:YES];
+    
+    // hide progress indicator
+    [progressIndicator setHidden:YES];
+    [progressIndicator stopAnimating];
+}
+
+
 - (IBAction)saveButtonPressed:(id)sender{
     
     // get data from textfields
@@ -100,6 +127,10 @@
         
         // make http request
         [MHttpConnection makeHttpRequestForUri:uri withMethod:@"POST" withParameters:parameters delegate:self];
+        
+        // show progress
+        [self disableAndShowProgress];
+
     }
 
 }
@@ -172,6 +203,9 @@
     
     if([[responseData objectForKey:@"status"] isEqualToString:@"fail"]){
         
+        // hide progress indicator
+        [self enableAndHideProgress];
+        
         UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Edit Profile" message:@"Something went wrong! Try again" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         
         [dialog show];
@@ -233,6 +267,9 @@
     UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Server can't be reached" delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     
     [dialog show];
+    
+    // hide progress indicator
+    [self enableAndHideProgress];
 }
 
 @end

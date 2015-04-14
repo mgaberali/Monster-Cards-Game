@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Reachability;
 
 @interface WinnersViewController : UIViewController <UITableViewDataSource,UITableViewDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+{
+    Reachability* internetReachable;
+    Reachability* hostReachable;
+}
 @property (nonatomic, strong) NSMutableArray *winnersArray;
 - (IBAction)refresh:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *winnersTable;
 
+@property bool internetActive;
+@property bool hostActive;
+-(void) checkNetworkStatus:(NSNotification *)notice;
 @end

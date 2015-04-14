@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D1AAF8881AC719CD00E42A2D"
-               BuildableName = "IOS-Game.app"
+               BuildableName = "Monster Cards.app"
                BlueprintName = "IOS-Game"
                ReferencedContainer = "container:IOS-Game.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D1AAF8881AC719CD00E42A2D"
-            BuildableName = "IOS-Game.app"
+            BuildableName = "Monster Cards.app"
             BlueprintName = "IOS-Game"
             ReferencedContainer = "container:IOS-Game.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D1AAF8881AC719CD00E42A2D"
-            BuildableName = "IOS-Game.app"
+            BuildableName = "Monster Cards.app"
             BlueprintName = "IOS-Game"
             ReferencedContainer = "container:IOS-Game.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D1AAF8881AC719CD00E42A2D"
-            BuildableName = "IOS-Game.app"
+            BuildableName = "Monster Cards.app"
             BlueprintName = "IOS-Game"
             ReferencedContainer = "container:IOS-Game.xcodeproj">
          </BuildableReference>

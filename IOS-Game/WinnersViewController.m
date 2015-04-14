@@ -8,6 +8,7 @@
 
 #import "WinnersViewController.h"
 #import "HWinner.h"
+#import "HReachability.h"
 @interface WinnersViewController ()
 
 @end
@@ -38,7 +39,7 @@ NSMutableArray* winners;
     response = [[NSMutableString alloc] initWithString:@""];
 	
     //initiating plist file path
-    filePath = @"/Users/participant/Desktop/IOSGameGIT/IOS-Game";
+    filePath = @"/Users/participant/Desktop/IOSGIT/IOS-Game";
     fullPath= [filePath stringByAppendingPathComponent:@"WinnersPList.plist"];
     
     //[self addWinnersToPlist];
@@ -284,11 +285,106 @@ NSMutableArray* winners;
 
 - (IBAction)refresh:(id)sender {
     response = [[NSMutableString alloc] initWithString:@""];
+     /*
+    // check for internet connection
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
+    
+    internetReachable = [Reachability reachabilityForInternetConnection];
+    [internetReachable startNotifier];
+    
+    // check if a pathway to a random host exists
+    hostReachable = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    [hostReachable startNotifier];
+    
+    // now patiently wait for the notification
+     */
+   
     printf("Getting top users\n");
-    NSURL *url=[[NSURL alloc]initWithString:@"http://192.168.1.14:8083/IOS-Game-Server/TopTen"];
+    NSURL *url=[[NSURL alloc]initWithString:@"http://10.145.19.131:8083/IOS-Game-Server/TopTen"];
     NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
     NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
     [connection start];
-
+   
 }
+
+-(void) checkNetworkStatus:(NSNotification *)notice
+{
+    // called after network status changes
+    NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
+    switch (internetStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"The internet is down.");
+            self.internetActive = NO;
+            
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"The internet is working via WIFI.");
+            self.internetActive = YES;
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            NSLog(@"The internet is working via WWAN.");
+            self.internetActive = YES;
+            
+            break;
+        }
+    }
+    
+    NetworkStatus hostStatus = [hostReachable currentReachabilityStatus];
+    switch (hostStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"A gateway to the host server is down.");
+            self.hostActive = NO;
+            
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"A gateway to the host server is working via WIFI.");
+            self.hostActive = YES;
+            
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            NSLog(@"A gateway to the host server is working via WWAN.");
+            self.hostActive = YES;
+            
+            break;
+        }
+    }
+    
+    if (self.hostActive) {
+        /*
+         // prepare request parameters
+         NSMutableDictionary *parameters = [NSMutableDictionary new];
+         // make servlet uri
+         NSString *uri = @"IOS-Game-Server/TopTen";
+         
+         // make http request
+         [MHttpConnection makeHttpRequestForUri:uri withMethod:@"GET" withParameters:parameters delegate:self];
+         */
+      
+        /*
+        printf("Getting top users\n");
+        NSURL *url=[[NSURL alloc]initWithString:@"http://10.145.19.131:8083/IOS-Game-Server/TopTen"];
+        NSURLRequest *request =[[NSURLRequest alloc]initWithURL:url];
+        NSURLConnection *connection=[[NSURLConnection alloc]initWithRequest:request delegate:self];
+        [connection start];
+        */
+    } else{
+        // show message to user
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"Reload winners" message:@"No internet connection." delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [dialog show];
+    }
+}
+
 @end

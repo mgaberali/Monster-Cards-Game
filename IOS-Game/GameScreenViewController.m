@@ -286,12 +286,15 @@ NSString *response;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     int lastScore = [[defaults objectForKey:@"score"] integerValue];
     if (lastScore < score) {
-        _celebrateView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"highscore.jpg"]];
+        //_celebrateView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"highscore.jpg"]];
         [defaults setObject:[NSString stringWithFormat:@"%d",score] forKey:@"score"];
     }
     
     //update the score at the server
-    [self updateScore];
+    if ([[defaults objectForKey:@"status"] isEqualToString:@"YES"]) {
+        [self updateScore];
+    }
+    
     return score;
 }
 -(void) addAnimationToButton:(UIButton*) button{
